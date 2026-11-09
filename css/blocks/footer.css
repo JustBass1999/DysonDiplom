@@ -1,0 +1,190 @@
+.footer {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 0.05px;
+}
+
+.footer__logo {
+  width: clamp(73px, -0.021rem + 9.55vw, 183px);
+  height: auto;
+  position: relative;
+  transform: translateX(-7px);
+}
+
+@media (width<=768px) {
+  .footer__logo {
+    transform: translateX(-4px);
+  }
+}
+
+.footer__company-info {
+  font-family: var(--second-family);
+  font-size: clamp(13px, 0.354rem + 0.95vw, 24px);
+  margin-top: clamp(10px, 1.3vw, 25px);
+  margin-bottom: clamp(10px, -0.208rem + 1.74vw, 30px);
+}
+
+@media (width<=768px) {
+  .footer__company-info {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Сетка из 4 колонок */
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  column-gap: 40px;
+}
+
+@media (width<=768px) {
+  .footer__container {
+    column-gap: 10px;
+  }
+}
+
+.footer__container > .footer__column:is(:nth-child(1), :nth-child(2)) {
+  display: grid;
+  grid-row: 1 / span 2;
+}
+
+.footer__container > .footer__column:is(:nth-child(3), :nth-child(4)) {
+  display: grid;
+  grid-template-rows: repeat(1, auto);
+}
+
+@media (width<=710px) {
+  .footer__container {
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(2, auto);
+    column-gap: 60px;
+  }
+
+  .footer__container > .footer__column:nth-child(1),
+  .footer__container > .footer__column:nth-child(2) {
+    grid-row: 1 / 3; /* Растягиваются с 1-й по 3-ю горизонтальную линию */
+  }
+
+  /* 3-я и 4-я колонки («Акции» и «Отдел логистики») начинаются со 2-го ряда */
+  .footer__container > .footer__column:nth-child(3),
+  .footer__container > .footer__column:nth-child(4) {
+    grid-row: 3 / 4; /* Располагаются строго во 2-м ряду */
+  }
+
+  .footer__bottom {
+    grid-column: 1 / 2;
+    grid-row: 5;
+  }
+}
+
+.footer__title {
+  font-family: var(--second-family);
+  font-size: clamp(13px, 0.354rem + 0.95vw, 24px);
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+@media (width<=950px) {
+  .footer__title {
+    margin-bottom: 10px;
+  }
+}
+
+@media (width<=950px) {
+  .footer__company-info,
+  .footer__title {
+    font-size: 13px;
+  }
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (width<=768px) {
+  .footer__list {
+    margin-bottom: 10px;
+  }
+}
+
+.footer__link {
+  color: inherit;
+  text-decoration: none;
+  font-size: clamp(9px, 0.188rem + 0.78vw, 18px);
+  font-weight: 300;
+  display: block;
+  margin-bottom: 6px;
+  transition: opacity 0.2s;
+}
+
+@media (width<=768px) {
+  .footer__link {
+    font-size: 9px;
+  }
+}
+
+.footer__link:hover {
+  opacity: 0.7;
+}
+
+.footer__phone {
+  display: block;
+  font-size: clamp(12px, 0.25rem + 1.04vw, 24px);
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+  line-height: 150%;
+  margin-bottom: 54px;
+}
+
+@media (width<=768px) {
+  .footer__phone {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+}
+
+.footer__socials {
+  display: flex;
+  gap: clamp(10px, 0.208rem + 0.87vw, 20px);
+}
+
+@media (width<=710px) {
+  .footer__socials {
+    margin-bottom: 10px;
+  }
+}
+
+.footer__socials img {
+  width: clamp(21px, 0.521rem + 1.65vw, 40px);
+  height: auto;
+}
+
+.footer__bottom {
+  grid-column: 3 / 5;
+  grid-row: 2;
+  align-content: end; /* Прижимает содержимое строки Grid к низу */
+}
+
+@media (width<=710px) {
+  .footer__bottom {
+    grid-column: 1 / 3;
+    grid-row: 4;
+  }
+}
+
+.footer__copyright {
+  font-size: clamp(9px, 0.188rem + 0.78vw, 18px);
+  font-weight: 300;
+  margin: 0;
+}
+
+@media (width<=768px) {
+  .footer__copyright {
+    font-size: 9px;
+  }
+}

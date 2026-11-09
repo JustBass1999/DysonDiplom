@@ -1,0 +1,774 @@
+.offers {
+  background-color: var(--background-grey);
+}
+
+.offers__container {
+  padding-block: 150px;
+}
+
+@media (width<=992px) {
+  .offers__container {
+    padding-block: 100px;
+  }
+}
+@media (width<=768px) {
+  .offers__container {
+    padding-block: 80px;
+  }
+}
+
+/** offers__header */
+
+.offers__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.offers__title {
+  padding-bottom: 30px;
+}
+
+@media (width<=768px) {
+  .offers__title {
+    padding-bottom: 25px;
+  }
+}
+
+.offers__title span {
+  color: var(--button-cover);
+}
+
+/* Скрываем стандартный чекбокс */
+.offers__popular-checkbox {
+  display: none;
+}
+
+@media (width>1200px) {
+  .offers__popular {
+    margin-bottom: 50px;
+  }
+}
+@media (width<=1200px) {
+  .offers__popular {
+    margin-bottom: 35px;
+  }
+}
+
+@media (width<=768px) {
+  .offers__popular {
+    margin-bottom: 20px;
+  }
+}
+
+@media (width<=540px) {
+  .offers__popular {
+    flex-wrap: wrap;
+    gap: 10px 0;
+  }
+}
+
+.popular__list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, auto);
+}
+
+.offers__popular-first--line {
+  display: flex;
+  justify-content: start;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+@media (width<=1500px) {
+  .offers__popular-first--line {
+    gap: 15px;
+  }
+}
+.offers__popular-title {
+  font-size: 18px;
+  line-height: 130%;
+  border: 1px solid #000;
+  border-radius: 31px;
+  padding: 6px 20px 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offers__popular-extra--line {
+  display: flex;
+  gap: 20px;
+  grid-row: 2;
+}
+/* По умолчанию скрываем элементы второй строки */
+.offers__popular-title--extra {
+  display: none;
+}
+
+/* Когда чекбокс отмечен (кнопка нажата), показываем скрытые теги. 
+   Используем flex, чтобы они вставали ровно в общую сетку .popular__list */
+.offers__popular-checkbox:checked ~ .popular__list .offers__popular-title--extra {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .offers__popular-checkbox:checked ~ .popular__list .offers__popular-title--extra {
+    display: block;
+  }
+}
+
+@media (width<=1805px) {
+  .offers__popular-title {
+    font-size: 16px;
+  }
+}
+
+@media (width<=1655px) {
+  .offers__popular-title {
+    font-size: 14px;
+  }
+}
+@media (width<=1500px) {
+  .offers__popular-title {
+    padding: 5px 15px 5px;
+    text-align: center;
+  }
+}
+@media (width<=1280px) {
+  .offers__popular-title {
+    font-size: 13px;
+  }
+}
+
+@media (width<=1200px) {
+  .offers__popular-title {
+    font-size: 12px;
+    padding: 6px 15px 7px;
+  }
+}
+
+@media (width<=768px) {
+  .offers__popular-title {
+    font-size: 12px;
+    padding: 6px 12px 7px;
+  }
+}
+
+@media (width<=650px) {
+  .offers__popular-title:not(.offers__popular-title--extra) {
+    font-size: 10px;
+    padding: 3px 10px 3px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Ограничение ровно в 2 строки */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (width <= 865px) {
+  /* Скрываем 4-й элемент в первой строке */
+  .popular__list .offers__popular-title:nth-child(4):not(.offers__popular-title--extra) {
+    display: none;
+  }
+
+  /* Скрываем 8-й элемент (последний во второй строке) даже при открытом чекбоксе */
+  #popular-toggle:checked ~ .popular__list .offers__popular-title--extra:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (width<=650px) {
+  .offers__popular-title--extra {
+    font-size: 10px;
+    padding: 3px 10px 3px;
+  }
+}
+
+.offers__button-wrapper {
+  display: inline-flex;
+  align-self: center;
+  justify-content: end;
+}
+.offers__button {
+  position: relative;
+  display: grid;
+  align-self: end;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+}
+
+/* Базовый текст кнопки, когда чекбокс НЕ отмечен */
+.offers__button::after {
+  content: "Показать еще";
+}
+
+/* Текст кнопки, когда чекбокс отмечен */
+.offers__popular-checkbox:checked ~ .popular__list .offers__button::after {
+  content: "Скрыть";
+}
+
+.offers__filter {
+  max-width: 273px;
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  user-select: none;
+}
+
+@media (width>768px) {
+  .offers__filter {
+    margin-bottom: 40px;
+  }
+}
+@media (width<=768px) {
+  .offers__filter {
+    margin-bottom: 30px;
+  }
+}
+
+.offers__filter-button {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  border: 1px solid #d10078;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+@media (width>768px) {
+  .offers__filter-button {
+    font-size: 15px;
+  }
+}
+@media (width<=768px) {
+  .offers__filter-button {
+    font-size: 10px;
+  }
+}
+
+@media (width>768px) {
+  .filter__down-arrow {
+    margin-right: 25px;
+  }
+}
+
+@media (width<=768px) {
+  .filter__down-arrow {
+    margin-right: 15.5px;
+  }
+}
+
+.offers__filter-text {
+  transition: color var(--transition-time) ease;
+}
+
+@media (width>768px) {
+  .offers__filter-text {
+    font-size: 18px;
+    padding: 7px 0 8px 25px;
+  }
+}
+@media (width<=768px) {
+  .offers__filter-text {
+    padding: 5px 0px 5px 10px;
+  }
+}
+
+.offers__filter_open .offers__filter-text {
+  color: var(--button-cover);
+  
+}
+
+.offers__filter-arrow {
+  background-image: url(../../icons/down-arrow.svg);
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: 25px;
+}
+
+/* Стили выпадающего меню фильтра */
+
+.offers__filter-list {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  padding: 0;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.offers__filter_open .offers__filter-list {
+  display: block;
+}
+
+.offers__filter_open .offers__filter-arrow {
+  background-image: url(../../icons/arrow-pink-up.svg);
+}
+
+/* Элемент: пункт списка */
+.offers__filter-option {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 25px 8px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  color: #333;
+}
+
+.offers__filter-option:last-child {
+  border-bottom: none;
+}
+
+.offers__filter-option:hover {
+  background-color: #f9f9f9;
+}
+
+/* Элемент: галочка */
+.offers__filter-check {
+  display: none;
+  color: #d10078;
+  font-weight: bold;
+}
+
+/* Модификатор пункта: выбранный элемент */
+.offers__filter-option--selected {
+  font-weight: 500;
+}
+
+.offers__filter-option--selected .offers__filter-check {
+  display: inline;
+}
+
+/** карточки */
+
+.offers__main {
+  margin-bottom: 130px;
+}
+
+@media (width<=1200px) {
+  .offers__main {
+    margin-bottom: 90px;
+  }
+}
+
+@media (width<=992px) {
+  .offers__main {
+    margin-bottom: 40px;
+  }
+}
+
+.offers__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: var(--background-grey);
+}
+
+@media (width<=540px) {
+  .offers__list {
+    gap: 10px;
+  }
+}
+
+.offers__list-item {
+  width: calc((100% - 40px) / 3);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-light);
+}
+
+@media (width<=540px) {
+  .offers__list-item {
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+.offers__image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (width<=1400px) {
+  .offers__image {
+    margin-bottom: 20px;
+  }
+}
+
+.offers__info {
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* указывает флекс-элементу занять всё доступное свободное пространство внутри флекс-контейнера по главной оси */
+  border-radius: 20px;
+}
+
+.offers__text {
+  font-weight: 300;
+  font-size: clamp(10px, 0.413rem + 0.91vw, 24px);
+  margin-inline: clamp(10px, 0.17rem + 1.94vw, 40px);
+  padding-top: clamp(12px, 0.325rem + 1.81vw, 40px);
+  flex-grow: 1;
+}
+
+@media (width<=992px) {
+  .offers__text {
+    font-size: 12px;
+  }
+}
+@media (width<=768px) {
+  .offers__text {
+    font-size: 10px;
+  }
+}
+
+.offers__booking {
+  margin-inline: clamp(10px, 0.17rem + 1.94vw, 40px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  margin-top: 25px;
+  margin-bottom: 40px;
+  row-gap: 7px;
+}
+
+@media (width<=992px) {
+  .offers__booking {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    row-gap: 3px;
+  }
+}
+
+.offers__discount {
+  margin-bottom: 8px;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  /* gap: 8px; */
+}
+
+.discount__in-stock {
+  font-size: clamp(10px, 0.504rem + 0.52vw, 18px);
+  color: var(--available-color);
+  white-space: nowrap;
+  flex-shrink: 1; /* Разрешаем сжиматься при необходимости */
+  min-width: 0; /* Предотвращаем переполнение флекс-контейнера */
+  place-self: center start;
+}
+
+@media (width<=992px) {
+  .discount__in-stock {
+    font-size: 12px;
+  }
+}
+@media (width<=768px) {
+  .discount__in-stock {
+    font-size: 9px;
+  }
+}
+
+.discount__in-stock::before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: var(--available-color);
+  margin-right: clamp(12px, 0.417rem + 0.69vw, 20px);
+}
+
+@media (width<=992px) {
+  .discount__in-stock::before {
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+  }
+}
+@media (width<=768px) {
+  .discount__in-stock::before {
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+  }
+}
+
+.discount__discount-amount {
+  background-color: var(--button-cover);
+  display: inline-flex;
+  justify-self: end;
+  /* justify-content: center; */
+  color: var(--text-light);
+  font-size: clamp(0.938rem, 0.801rem + 0.58vw, 1.5rem);
+  padding-block: 4px;
+  padding-inline: clamp(10.5px, 0.383rem + 1.17vw, 28.5px);
+  max-width: clamp(56px, 2.635rem + 3.69vw, 113px);
+  flex-shrink: 0;
+  border-radius: 5px;
+}
+
+@media (width<=992px) {
+  .discount__discount-amount {
+    padding-inline: 6px;
+    font-size: 16px;
+  }
+}
+@media (width<=768px) {
+  .discount__discount-amount {
+    padding-inline: 6px;
+    font-size: 14px;
+  }
+}
+
+.offers__prices {
+  display: grid;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  font-family: var(--second-family);
+  font-size: 42px;
+  color: #111;
+  margin-bottom: clamp(11px, 0.248rem + 1.88vw, 40px);
+}
+
+@media (width<=992px) {
+  .offers__prices {
+    margin-bottom: 12px;
+  }
+}
+
+.offers__previous-price {
+  font-family: var(--second-family);
+  font-weight: 900;
+  font-size: clamp(12px, 0.568rem + 0.78vw, 24px);
+  text-decoration: line-through;
+  white-space: nowrap;
+  color: #ababab;
+  justify-self: end;
+  align-self: center;
+}
+
+@media (width<=992px) {
+  .offers__previous-price {
+    font-size: 12px;
+  }
+}
+
+.offers__last-price {
+  /* display: inline-block; */
+  font-size: clamp(17px, 0.683rem + 1.62vw, 42px);
+  white-space: nowrap;
+  grid-row-start: 2;
+  grid-column-start: 1;
+}
+
+@media (width<=992px) {
+  .offers__last-price {
+    font-size: 20px;
+  }
+}
+@media (width<=768px) {
+  .offers__last-price {
+    font-size: 16px;
+  }
+}
+
+.offers__add-to-card {
+  display: flex;
+  align-items: stretch; /* Одинаковая высота кнопок */
+  width: 100%;
+  height: clamp(32px, 1.49rem + 2.09vw, 64px);
+}
+
+.offers__product-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, -0.02rem + 2.61vw, 50px);
+  border: 1px solid #111;
+  border-radius: 3px;
+  width: 50%;
+}
+
+@media (width<=768px) {
+  .offers__product-count {
+    display: none;
+  }
+}
+
+/* КОД ОТ НЕЙРОНКИ НАЧАЛСЯ */
+
+.count__btn {
+  width: auto;
+  height: auto;
+  background: transparent;
+
+  /* Идеальное центрирование символов + и - */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px; /* Размер значков */
+  line-height: 1;
+  font-family: inherit;
+  color: #111;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.count__btn:hover {
+  opacity: 0.6;
+}
+
+.count__btn:active {
+  transform: scale(0.95);
+}
+
+.count__input {
+  width: 30px;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: 400;
+  color: #111;
+  outline: none;
+  /* Убираем стрелочки браузера у input number */
+  -moz-appearance: textfield;
+}
+
+.count__input::-webkit-outer-spin-button,
+.count__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Кнопка "В корзину" */
+.offers__card-filling {
+  flex: 1 1 50%;
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #111;
+  border-radius: 0 3px 3px 0; /* Скругление только справа */
+  font-size: clamp(12px, 0.568rem + 0.78vw, 24px);
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.offers__card-filling:hover {
+  background-color: #333;
+}
+
+/* КОД ОТ НЕЙРОНКИ КОНЧИЛСЯ */
+
+.offers__minus-button {
+  margin-left: 35px;
+  font-size: 0%;
+}
+
+@media (width<=1200px) {
+  .offers__minus-button {
+    margin-left: 30px;
+  }
+}
+
+.offers__total-count {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: clamp(14px, 0.71rem + 0.65vw, 24px);
+  color: #111;
+}
+
+.offers__plus-button {
+  padding-right: 35px;
+}
+
+.offers-numbers {
+}
+
+.offers__card {
+}
+
+.offers__footer {
+}
+
+.offers__select-page {
+  max-width: 245px;
+  max-height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.select-page__previous-page {
+  width: 64px;
+  height: 64px;
+}
+
+@media (width<=992px) {
+  .select-page__previous-page {
+    width: 48px;
+    height: 48px;
+  }
+}
+@media (width<=768px) {
+  .select-page__previous-page {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.select-page__next-page {
+  margin-right: 30px;
+  margin-left: 20px;
+  width: 64px;
+  height: 64px;
+}
+
+@media (width<=992px) {
+  .select-page__next-page {
+    width: 48px;
+    height: 48px;
+  }
+}
+@media (width<=768px) {
+  .select-page__next-page {
+    width: 36px;
+    height: 36px;
+    margin-right: 15px;
+    margin-left: 10px;
+  }
+}
+
+.select-page__page-number {
+  display: inline-block;
+  font-size: 24px;
+}
+
+@media (width<=768px) {
+  .select-page__page-number {
+    font-size: 16px;
+  }
+}

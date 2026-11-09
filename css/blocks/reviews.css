@@ -1,0 +1,257 @@
+.reviews__container {
+}
+.reviews__header {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #ababab;
+}
+.reviews__main-title {
+}
+.main__title {
+}
+
+.reviews__count {
+  margin-bottom: 20px;
+}
+.reviews__count span {
+  color: var(--button-cover);
+}
+.reviews__leave-reviews {
+  display: flex;
+  gap: 15px;
+}
+
+@media (width<=540px) {
+  .reviews__leave-reviews {
+    justify-content: space-between;
+  }
+}
+
+.reviews__rate-it {
+  width: 11.5vw;
+}
+
+@media (width<=540px) {
+  .reviews__rate-it {
+    width: 15vw; /* При ширине экрана 1992px это как раз будет примерно 229px */
+  }
+}
+@media (width<=390px) {
+  .reviews__rate-it {
+    width: 18vw; /* При ширине экрана 1992px это как раз будет примерно 229px */
+  }
+}
+.rate-it__stars-count {
+}
+.stars {
+}
+.leave-reviews__stars {
+  display: flex;
+}
+
+.stars__star-image {
+}
+.reviews__add-review {
+  font-size: 24px;
+  border: 1px solid #111;
+  border-radius: 3px;
+  padding: 10px 20px;
+  max-width: 270px;
+  max-height: 64px;
+}
+
+@media (width<=768px) {
+  .reviews__add-review {
+    font-size: 16px;
+    padding: 7px 7px;
+  }
+}
+
+.review-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border-bottom: 1px solid #ababab;
+  gap: 15px;
+}
+
+@media (width<=768px) {
+  .review-card {
+    gap: 15px;
+  }
+}
+@media (width<=540px) {
+  .review-card {
+    flex-direction: column;
+  }
+}
+
+.review-card__author {
+  display: flex;
+  flex-direction: column;
+  width: 11.5vw; /* При ширине экрана 1992px это как раз будет примерно 229px */
+  flex-shrink: 0; /* Автор не должен сжиматься */
+  min-width: 0; /* Предотвращаем выталкивание контейнера содержимым */
+  margin-top: 40px;
+}
+
+@media (width<=540px) {
+  .review-card__author {
+    width: 15vw; /* При ширине экрана 1992px это как раз будет примерно 229px */
+  }
+}
+@media (width<=390px) {
+  .review-card__author {
+    width: 18vw; /* При ширине экрана 1992px это как раз будет примерно 229px */
+  }
+}
+
+.review-card__name {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  margin-bottom: 15px;
+}
+
+@media (width<=768px) {
+  .review-card__name {
+    font-size: 14px;
+  }
+}
+@media (width<=540px) {
+  .review-card__name {
+    margin-bottom: 10px;
+  }
+}
+
+.review-card__stars {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.review-card__body {
+  flex-grow: 1;
+  display: grid;
+  /* Левая колонка занимает всё свободное место (1fr), правая — по размеру даты (auto) */
+  grid-template-columns: 0.8fr 0.2fr;
+  gap: 16px;
+  margin-block: 40px;
+}
+
+@media (width<=768px) {
+  .review-card__body {
+    gap: 10px;
+  }
+}
+@media (width<=540px) {
+  .review-card__body {
+    margin-block: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.review-card__header {
+  display: flex;
+  justify-content: space-between; /* Заголовок слева, дата справа */
+  align-items: center;
+  margin-top: 40px;
+  width: 100%; /* Занимает всю ширину правой колонки */
+}
+.review-card__title {
+  grid-column: 1 / 2; /* Строго первая колонка */
+  grid-row: 1;
+}
+
+@media (width<=768px) {
+  .review-card__title {
+    font-size: 14px;
+  }
+}
+
+.review-card__date {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 150%;
+  color: #909090;
+  grid-column: 2/ 3; /* Вторая колонка справа */
+  grid-row: 1; /* Первая строка */
+  white-space: nowrap;
+  justify-self: end; /* Прижимаем дату вправо */
+}
+
+@media (width<=1200px) {
+  .review-card__date {
+    font-size: 12px;
+  }
+}
+.review-card__text {
+  grid-column: 1 / 2; /* Строго первая колонка */
+  grid-row: 2;
+  text-align: justify;
+}
+
+@media (width<=580px) {
+  .review-card__text {
+    text-align: left;
+    /* Ограничение текста по высоте в 4 строки */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Количество строк, до которого нужно обрезать */
+    -webkit-box-orient: vertical; /* Ориентация блока */
+    overflow: hidden; /* Скрываем всё, что вылазит за пределы */
+    text-overflow: ellipsis; /* Добавляем многоточие в конце */
+  }
+}
+
+@media (width<=1200px) {
+  .review-card__text {
+    font-size: 12px;
+  }
+}
+.review-card__gallery {
+  grid-column: 1 / 2; /* Строго первая колонка */
+  grid-row: 3;
+}
+.review-card__gallery:empty {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+.review-card__photos {
+  margin-top: 30px;
+}
+@media (width<=1200px) {
+  .review-card__photos {
+    margin-top: 0;
+  }
+}
+@media (width<=768px) {
+  .review-card__photos img {
+    max-width: 61px;
+    max-height: 61px;
+  }
+}
+
+.review-card__more-photos {
+  margin-top: 10px;
+  color: var(--button-cover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (width<=768px) {
+  .review-card__more-photos {
+    font-size: 12px;
+  }
+}
+
+.reviews__footer {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (width<=768px) {
+  .reviews__footer {
+    margin-top: 50px;
+  }
+}

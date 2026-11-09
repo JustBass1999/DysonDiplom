@@ -1,0 +1,186 @@
+.hero {
+  position: relative;
+  background-color: var(--bg-grey);
+  display: flex;
+  justify-content: center;
+  min-height: clamp(389px, 5.104rem + 40.02vw, 850px);
+  overflow: hidden;
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. position: relative создает контекст позиционирования для дочерних абсолютных элементов.
+  2. display: flex и justify-content: center центрируют внутренний контент.
+  3. min-height с clamp() обеспечивает плавную адаптивную высоту секции под разные экраны.
+  4. overflow: hidden полностью обрезает фоновое изображение или элементы, выходящие за пределы блока по горизонтали, предотвращая появление нежелательной полосы прокрутки.
+*/
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(var(--container-width), 100% - var(--container-padding) * 2);
+  padding-top: clamp(50px, -0.061rem + 13.07vw, 250px);
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Изоляция от глобального контейнера (.container) устраняет конфликты с сеткой и позиционированием.
+  2. width со значением min() гарантирует адаптивность по ширине с учетом отступов.
+  3. z-index: 1 поднимает текстовый контент поверх фонового изображения.
+  4. clamp() в padding-top плавно управляет верхним отступом контента на разных экранах.
+*/
+
+.hero__bg {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  width: auto;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (width>1200px) {
+  .hero__bg {
+    right: -20%;
+  }
+}
+@media (width<=1200px) {
+  .hero__bg {
+    right: -25%;
+  }
+}
+@media (width<=768px) {
+  .hero__bg {
+    right: -30%;
+  }
+}
+
+@media (width<=768px) {
+  .hero__bg {
+    height: clamp(274px, 9.709rem + 30.42vw, 389px);
+  }
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Устраняет конфликт свойств top и bottom (top: auto вместе с bottom: 0), привязывая блок строго к низу родителя без растягивания на 100%.
+  2. z-index: -1 и pointer-events: none прячут фон под контент и делают его «кликабельным насквозь».
+  3. Адаптивные медиазапросы с брейкпоинтами и clamp() на высоту и сдвиг (right) удерживают картинку в правильной визуальной позиции на любых экранах.
+*/
+
+.hero__bg img {
+  display: block;
+  width: auto;
+  height: 100%;
+  object-position: bottom right;
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Предотвращает появление лишних отступов под картинкой (display: block).
+  2. Связка width: auto и height: 100% заставляет изображение пропорционально следовать за высотой родительского контейнера.
+  3. object-position фиксирует графику у правого нижнего угла внутри её области.
+*/
+
+.hero__content {
+  display: inline-flex;
+  flex-direction: column;
+  max-width: clamp(290px, 13.887rem + 17.39vw, 556px);
+  z-index: 1;
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Организует элементы контента (заголовок, текст, кнопку) в вертикальную колонку.
+  2. clamp() в max-width плавно сужает ширину текстового блока при уменьшении экрана, исключая деформацию.
+*/
+
+.hero__title {
+  line-height: 103%;
+  color: var(--text-dark);
+  margin-bottom: clamp(16px, 0.618rem + 1.57vw, 40px);
+}
+
+@media (width>768px) {
+  .hero__title {
+    max-width: clamp(363px, 14.646rem + 16.75vw, 556px);
+  }
+}
+
+@media (width<=768px) {
+  .hero__title {
+    max-width: clamp(290px, 13.418rem + 19.31vw, 363px);
+  }
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Задает стабильный межстрочный интервал (line-height) и цвет заголовка.
+  2. Адаптивные отступы снизу (margin-bottom) плавно уменьшаются на мобильных устройствах.
+  3. Точечные медиазапросы с clamp() подстраивают максимальную ширину строк под разные брейкпоинты для идеального переноса текста.
+*/
+
+.hero__description {
+  font-family: var(--font-family);
+  font-size: clamp(12px, 0.527rem + 0.92vw, 26px);
+  line-height: 130%;
+  color: var(--text-dark);
+  margin-bottom: clamp(30px, 0.919rem + 3.92vw, 90px);
+  max-width: clamp(170px, 4.507rem + 25.1vw, 554px);
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Делает размер шрифта и отступы описания полностью отзывчивыми без резких скачков через функции clamp().
+  2. Ограничивает максимальную ширину блока для читаемости текста на любых устройствах.
+*/
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  max-width: clamp(141px, 7.315rem + 6.14vw, 235px);
+  padding-block: 19.5px;
+  background-color: var(--button-cover);
+  font-family: inherit;
+  font-size: clamp(16px, 0.873rem + 0.52vw, 24px);
+  color: var(--text-light);
+  animation: bob 2s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  28% {
+    transform: translateY(-5px);
+    color: #ff8a00;
+  }
+}
+
+@media (width<=1200px) {
+  .hero__button {
+    padding-block: 15px;
+  }
+}
+
+@media (width<=992px) {
+  .hero__button {
+    padding-block: 10px;
+  }
+}
+
+@media (width<=768px) {
+  .hero__button {
+    padding-block: 7px;
+  }
+}
+@media (width<=570px) {
+  .hero__button {
+    padding-block: 7px;
+  }
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Выравнивает текст и контент внутри кнопки с помощью flexbox.
+  2. Адаптирует размер шрифта, ширину и внутренние вертикальные отступы (padding-block) под уменьшающиеся экраны, предотвращая визуальный дисбаланс.
+  3. Добавляет плавной интерактивности (анимация покачивания bob).
+*/

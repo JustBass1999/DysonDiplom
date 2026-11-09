@@ -1,0 +1,33 @@
+:root {
+  /* container */
+  --container-width: 1360px;
+  --container-padding: clamp(20px, -2.694rem + 16.83vw, 280px);
+  --container-padding-540px: clamp(20px, -2rem + 13.33vw, 40px);
+  --container-margin: clamp(46px, 1.218rem + 6.8vw, 150px);
+
+  /* font-family */
+  --font-family: "Open-Sans", sans-serif;
+  --second-family: "NAMU", sans-serif;
+
+  /* header-font-size */
+  --h1-font-size: clamp(24px, 1.166rem + 1.42vw, 46px);
+
+  /* hero-section */
+  --padding-hero-top: clamp(50px, 0.091rem + 12.94vw, 250px);
+  --padding-hero-bottom: clamp(178px, 10.109rem + 4.34vw, 244px);
+
+  /* colors */
+  --main-color: #fff;
+  --background-grey: #f8f8f8;
+  --accent-color: #ff00ff;
+  --button-cover: #c5358c;
+  --bg-dark: #000000;
+  --bg-grey: #dddddd;
+  --text-dark: #000000;
+  --text-light: #fff;
+  --secondary-color: #c9c69b;
+  --disable-color: #5d5d56;
+  --available-color: #68ae5c;
+
+  --transition-time: 0.5s;
+}

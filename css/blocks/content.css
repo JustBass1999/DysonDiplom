@@ -1,0 +1,169 @@
+.content {
+  background-color: var(--bg-light);
+}
+
+.content__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (width <=768px) {
+  .content__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+.content__article {
+  border-radius: 3px;
+  box-shadow: 5px 5px 20px 3px #f1eeee;
+}
+
+.content__text {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+}
+
+@media (width <=1400px) {
+  .content__text {
+    padding-left: 30px;
+  }
+}
+
+@media (width <=992px) {
+  .content__text {
+    padding-left: 20px;
+  }
+}
+
+@media (width <=768px) {
+  .content__text {
+    padding-top: 10px;
+    padding-left: 12px;
+    padding-bottom: 15px;
+  }
+}
+
+.content__text a {
+  color: var(--text-dark);
+}
+
+/** Перекраска при наведении всего блока в черный */
+
+@media (any-hover: hover) {
+  .content__text:hover {
+    background-color: var(--text-dark);
+  }
+
+  /** Перекраска всего текста в белый на черном фоне */
+
+  .content__text:hover h3 {
+    color: var(--text-light);
+  }
+
+  .content__text:hover a {
+    color: var(--text-light);
+  }
+}
+
+.content__title {
+  font-family: var(--second-family);
+  font-size: 30px;
+  color: var(--text-dark);
+  margin-bottom: 11px;
+}
+
+@media (width <=1600px) {
+  .content__title {
+    font-size: 28px;
+  }
+}
+
+@media (width <=1400px) {
+  .content__title {
+    font-size: 24px;
+    margin-bottom: 9px;
+  }
+}
+
+@media (width <=1200px) {
+  .content__title {
+    font-size: 20px;
+  }
+}
+
+@media (width <=992px) {
+  .content__title {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (width <=390px) {
+  .content__title {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+}
+
+.content__info {
+  font-size: 24px;
+  font-family: var(--font-family);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.content__info::after {
+  display: inline-block;
+  content: "";
+  width: 24px;
+  height: 24px;
+
+  -webkit-mask: url("../../icons/arrow-black-right.svg") no-repeat center / contain;
+  mask: url("../../icons/arrow-black-right.svg") no-repeat center / contain;
+  background-color: currentColor;
+  transform: translateY(3px);
+}
+
+@media (width <=1400px) {
+  .content__info {
+    font-size: 20px;
+  }
+}
+
+@media (width <=1200px) {
+  .content__info {
+    font-size: 18px;
+  }
+}
+@media (width <=992px) {
+  .content__info {
+    font-size: 14px;
+    gap: 10px;
+  }
+  .content__info::after {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (width <=768px) {
+  .content__info {
+    font-size: 12px;
+  }
+  .content__info::after {
+    transform: translateY(2px);
+  }
+}
+
+@media (width <=390px) {
+  .content__info {
+    font-size: 11px;
+  }
+  .content__info::after {
+    transform: translateY(1px);
+  }
+}

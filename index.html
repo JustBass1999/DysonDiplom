@@ -1,0 +1,870 @@
+<!doctype html>
+<html class="page" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/base/index.css" />
+    <link rel="preload" as="image" href="../../images/main-banner.png" />
+    <script defer src="./js/offers__filter.js"></script>
+    <script defer src="./js/burger.menu.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body class="page__body">
+    <header class="header">
+      <div class="header__container">
+        <div class="header__buttons">
+          <button class="header__burger" aria-label="Открыть меню" aria-expanded="false">
+            <svg class="burger__icon-menu" width="50" height="50">
+              <use href="/icons/sprite.svg#burger-icon"></use>
+            </svg>
+            <svg class="burger__icon-cross" width="48" height="48">
+              <use href="/icons/sprite.svg#burger-cross"></use>
+            </svg>
+          </button>
+          <a href="#" class="header__logo">
+            <img
+              class="header__logo-icon"
+              width="183"
+              height="77"
+              src="/titles/logo.svg"
+              alt="Логотип DYSON"
+            />
+          </a>
+        </div>
+        <nav class="header__menu menu" aria-label="Главное меню">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="#about-us" class="menu__link">О нас</a>
+            </li>
+            <li class="menu__item">
+              <a href="#delivery-pay" class="menu__link">Доставка и оплата</a>
+            </li>
+            <li class="menu__item">
+              <a href="#registration" class="menu__link">Регистрация продукта</a>
+            </li>
+            <li class="menu__item">
+              <a href="#service" class="menu__link">Сервис</a>
+            </li>
+            <li class="menu__item">
+              <a href="#certificates" class="menu__link">Сертификаты и лицензии</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__orders">
+          <button class="header__orders-button" aria-label="Открыть корзину">
+            <svg class="header__orders-icon" width="48" height="48" aria-hidden="true">
+              <use href="/icons/sprite.svg#shopping-cart"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__inner">
+          <picture class="hero__bg">
+            <source
+              media="(max-width: 540px)"
+              srcset="../images/main-banner.webp"
+              type="image/webp"
+            />
+            <img width="997" height="850" src="../images/main-banner.png" alt="" aria-hidden="true" fetchpriority="high" />
+          </picture>
+          <div class="hero__content">
+            <h1 class="hero__title">Уникальные технологии для ухода за волосами</h1>
+            <p class="hero__description">Идеальная укладка для всех типов волос вместе с Dyson</p>
+            <button class="hero__button" type="button">Подробнее</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="container content__container">
+          <article class="content__article">
+            <img
+              class="content-img"
+              src="./content/image 49.png"
+              alt="Акционные продложения от фирмы DYSON"
+            />
+            <div class="content__text">
+              <h3 class="content__title">Акции</h3>
+              <a class="content__info" href="#">Подробнее</a>
+            </div>
+          </article>
+          <article class="content__article">
+            <img class="content-img" src="./content/image 50.png" alt="Фен фирмы Dyson" />
+            <div class="content__text">
+              <h3 class="content__title">Фены</h3>
+              <a class="content__info" href="#">Подробнее</a>
+            </div>
+          </article>
+          <article class="content__article">
+            <img class="content-img" src="./content/51.png" alt="Стайлер фирмы Dyson" />
+            <div class="content__text">
+              <h3 class="content__title">Стайлеры</h3>
+              <a class="content__info" href="#">Подробнее</a>
+            </div>
+          </article>
+          <article class="content__article">
+            <img class="content-img" src="./content/52.png" alt="Выпрямитель фирмы Dyson" />
+            <div class="content__text">
+              <h3 class="content__title">Выпрямители</h3>
+              <a class="content__info" href="#">Подробнее</a>
+            </div>
+          </article>
+          <article class="content__article">
+            <img
+              class="content-img"
+              src="./content/image 49.png"
+              alt="Акционные продложения от фирмы DYSON"
+            />
+            <div class="content__text">
+              <h3 class="content__title">Акции</h3>
+              <a class="content__info" href="#">Подробнее</a>
+            </div>
+          </article>
+          <article class="content__article">
+            <img class="content-img" src="./content/image 50.png" alt="Фен фирмы Dyson" />
+            <div class="content__text">
+              <h3 class="content__title">Фены</h3>
+              <a class="content__info" href="#">Подробнее</a>
+            </div>
+          </article>
+          <article class="content__article">
+            <img class="content-img" src="./content/51.png" alt="Стайлер фирмы Dyson" />
+            <div class="content__text">
+              <h3 class="content__title">Стайлеры</h3>
+              <a class="content__info" href="#">Подробнее</a>
+            </div>
+          </article>
+          <article class="content__article">
+            <img class="content-img" src="./content/52.png" alt="Выпрямитель фирмы Dyson" />
+            <div class="content__text">
+              <h3 class="content__title">Выпрямители</h3>
+              <a class="content__info" href="#">Подробнее</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="expert__section">
+        <div class="expert__container container">
+          <div class="expert__content">
+            <div class="expert__content-container">
+              <div class="expert__text-wrap">
+                <h2 class="expert__title main__title">Мнение экспертов о технике Dyson</h2>
+                <p class="expert__text-normal">
+                  Сегодня многие стилисты и салоны красоты в своей работе используют технику от
+                  Dyson.
+                  <br />
+                  <br />
+                  Несмотря на высокую стоимость, техника Dyson помогает экономить. <br />
+                  Мастера тратят меньше времени на сушку и укладку волос, благодаря чему успевают
+                  обслужить большее количество клиентов. Также устройства <br />
+                  от Dyson потребляют значительно меньше электроэнергии, не теряя свою мощность.
+                  <br />
+                  <br />
+                  Фены Dyson универсальны. Они подходят для сушки разных типов волос. Насадки из
+                  комплекта помогают создавать укладки на любой вкус. Функциональность девайсов
+                  впечатляет не меньше, чем их уникальный дизайн. <br />
+                  <br />
+                  Ведущие стилисты отмечают, что техника Dyson для ухода за волосами идеально
+                  подходят для длительной работы за счет своей эргономичности. <br />
+                  А за счет бесшумности инновационного мотора использование устройств стало
+                  максимально комфортным.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="expert__text-small">
+            <h2 class="expert__title-small">Мнение экспертов о технике Dyson</h2>
+            <p>
+              Сегодня многие стилисты и салоны красоты в своей работе используют технику от Dyson.
+              <br />
+              <br />
+              Несмотря на высокую стоимость, техника Dyson помогает экономить. Мастера тратят меньше
+              времени на сушку и укладку волос, благодаря чему успевают обслужить большее количество
+              клиентов. Также устройства от Dyson потребляют значительно меньше электроэнергии, не
+              теряя свою мощность. <br />
+              <br />
+              Фены Dyson универсальны. Они подходят для сушки разных типов волос. Насадки из
+              комплекта помогают создавать укладки на любой вкус. Функциональность девайсов
+              впечатляет не меньше, чем их уникальный дизайн. <br />
+              <br />
+              Ведущие стилисты отмечают, что техника Dyson для ухода за волосами идеально подходят
+              для длительной работы за счет своей эргономичности.А за счет бесшумности
+              инновационного мотора использование устройств стало максимально комфортным.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="advantages">
+        <div class="advantages__container container">
+          <h2 class="advantages__title main__title">Почему выбирают нас</h2>
+          <ul class="advantages__list">
+            <article class="advantages__item">
+              <img src="./icons/advatnages/shoping-card.svg" class="item__img" alt="" />
+              <h3 class="item__name">Широкий ассортимент</h3>
+              <p class="item__text">
+                Большой выбор техники <br />
+                и аксессуаров
+              </p>
+            </article>
+            <article class="advantages__item">
+              <img src="./icons/advatnages/delivery-track.svg" class="item__img" alt="" />
+              <h3 class="item__name">Быстрая доставка</h3>
+              <p class="item__text">
+                По Москве — 2-3 часа; <br />
+                По России — 2-4 дня
+              </p>
+            </article>
+            <article class="advantages__item">
+              <img src="./icons/advatnages/special-offer.svg" class="item__img" alt="" />
+              <h3 class="item__name">Специальное предложение</h3>
+              <p class="item__text">
+                Только для клиентов <br />
+                нашего сайта
+              </p>
+            </article>
+            <article class="advantages__item">
+              <img src="./icons/advatnages/safety-payment.svg" class="item__img" alt="" />
+              <h3 class="item__name">Гарантия производителя</h3>
+              <p class="item__text">
+                Гарантия 2 года <br />
+                на устройства и аксессуары
+              </p>
+            </article>
+            <article class="advantages__item">
+              <img src="./icons/advatnages/varanty.svg" class="item__img" alt="" />
+              <span class="item__name">Безопасная оплата</span>
+              <p class="item__text">Оплата после получения товара</p>
+            </article>
+            <article class="advantages__item">
+              <img src="./icons/advatnages/free-consultation.svg" class="item__img" alt="" />
+              <h3 class="item__name">Бесплатная консультация</h3>
+              <p class="item__text">
+                В любом удобном для вас <br />
+                формате, 7 дней в неделю
+              </p>
+            </article>
+          </ul>
+        </div>
+      </section>
+
+      <section class="offers">
+        <div class="offers__container container">
+          <div class="offers__header">
+            <h2 class="offers__title main__title">Спецпредложения <span>14</span></h2>
+
+            <div class="offers__popular">
+              <!-- Скрытый чекбокс для управления состоянием без JS -->
+              <input
+                type="checkbox"
+                id="popular-toggle"
+                class="offers__popular-checkbox"
+                alt="Показать все предложения"
+              />
+              <div class="popular__list">
+                <div class="offers__popular-first--line">
+                  <div class="offers__popular-title">dyson стайлер для длинных волос</div>
+                  <div class="offers__popular-title">dyson стайлер красный</div>
+                  <div class="offers__popular-title">dyson hs01 airwrap compliete</div>
+                  <div class="offers__popular-title">фен щетка дайсон</div>
+                </div>
+                <div class="offers__popular-extra--line">
+                  <!-- Вторая строка (появятся при клике) -->
+                  <div class="offers__popular-title offers__popular-title--extra">
+                    dyson supersonic
+                  </div>
+                  <div class="offers__popular-title offers__popular-title--extra">
+                    насадки для дайсона
+                  </div>
+                  <div class="offers__popular-title offers__popular-title--extra">
+                    чехол для dyson
+                  </div>
+                  <div class="offers__popular-title offers__popular-title--extra">
+                    чехол для dyson
+                  </div>
+                  <!-- Кнопка-лейбл, меняющая текст через CSS -->
+                </div>
+                <div class="offers__button-wrapper">
+                  <label for="popular-toggle" class="offers__button show-more__pink-button"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="offers__filter" id="sortSelect">
+            <!-- Шапка селекта -->
+            <div class="offers__filter-button">
+              <span class="offers__filter-text">Сначала популярные</span>
+              <img class="offers__filter-arrow" width="10px" height="17px" />
+            </div>
+
+            <!-- Выпадающий список -->
+            <ul class="offers__filter-list">
+              <li class="offers__filter-option offers__filter-option_selected" data-value="popular">
+                <span>Сначала популярные</span>
+                <span class="offers__filter-check">✓</span>
+              </li>
+              <li class="offers__filter-option" data-value="cheap">
+                <span>Сначала дешёвые</span>
+                <span class="offers__filter-check">✓</span>
+              </li>
+              <li class="offers__filter-option" data-value="expensive">
+                <span>Сначала дорогие</span>
+                <span class="offers__filter-check">✓</span>
+              </li>
+              <li class="offers__filter-option" data-value="new">
+                <span>Новинки</span>
+                <span class="offers__filter-check">✓</span>
+              </li>
+              <li class="offers__filter-option" data-value="rating">
+                <span>Высокий рейтинг</span>
+                <span class="offers__filter-check">✓</span>
+              </li>
+            </ul>
+          </div>
+          <div class="offers__main">
+            <ul class="offers__list">
+              <article class="offers__list-item">
+                <div class="offers__info">
+                  <div class="offers__image">
+                    <img src="./content/offer-1.png" alt="Синий фен Dyson с насадками" />
+                  </div>
+                  <div class="offers__text">
+                    Фен Dyson Supersonic HD07 синий медный с 5 насадками в чехле и расческами
+                  </div>
+                  <div class="offers__booking">
+                    <span class="discount__in-stock">В наличии</span>
+                    <span class="discount__discount-amount">-15%</span>
+                    <span class="offers__last-price">59 990Р</span>
+                    <span class="offers__previous-price">69 990 Р</span>
+                  </div>
+                  <div class="offers__add-to-card">
+                    <div class="offers__product-count">
+                      <button class="count__btn count__btn--minus">−</button>
+                      <div class="offers__total-count">1</div>
+                      <button class="count__btn count__btn--plus">+</button>
+                    </div>
+                    <button class="offers__card-filling">В корзину</button>
+                  </div>
+                </div>
+              </article>
+              <article class="offers__list-item">
+                <div class="offers__info">
+                  <div class="offers__image">
+                    <img src="./content/offer-2.png" alt="Серый фен DYSON с разными насадками" />
+                  </div>
+                  <div class="offers__text">
+                    Фен Dyson Supersonic HD07 с 5 насадками и подставкой
+                  </div>
+                  <div class="offers__booking">
+                    <span class="discount__in-stock">В наличии</span>
+                    <span class="discount__discount-amount">-15%</span>
+                    <span class="offers__last-price">47 990Р</span>
+                    <span class="offers__previous-price">51 990 Р</span>
+                  </div>
+                  <div class="offers__add-to-card">
+                    <div class="offers__product-count">
+                      <button class="count__btn count__btn--minus">−</button>
+                      <div class="offers__total-count">1</div>
+                      <button class="count__btn count__btn--plus">+</button>
+                    </div>
+                    <button class="offers__card-filling">В корзину</button>
+                  </div>
+                </div>
+              </article>
+              <article class="offers__list-item">
+                <div class="offers__info">
+                  <div class="offers__image">
+                    <img
+                      src="./content/offer-3.png"
+                      alt="Фиолетовый фен DYSON с разными насадками"
+                    />
+                  </div>
+                  <div class="offers__text">
+                    Фен Dyson Supersonic 4 насадки HD03 с чехлом для хранения цвет сирень
+                  </div>
+                  <div class="offers__booking">
+                    <span class="discount__in-stock">В наличии</span>
+                    <span class="discount__discount-amount">-15%</span>
+                    <span class="offers__last-price">46 990Р</span>
+                    <span class="offers__previous-price">51 990 Р</span>
+                  </div>
+                  <div class="offers__add-to-card">
+                    <div class="offers__product-count">
+                      <button class="count__btn count__btn--minus">−</button>
+                      <div class="offers__total-count">1</div>
+                      <button class="count__btn count__btn--plus">+</button>
+                    </div>
+                    <button class="offers__card-filling">В корзину</button>
+                  </div>
+                </div>
+              </article>
+              <article class="offers__list-item">
+                <div class="offers__info">
+                  <div class="offers__image">
+                    <img src="./content/offer-1.png" alt="Синий фен Dyson с насадками" />
+                  </div>
+                  <div class="offers__text">
+                    Фен Dyson Supersonic HD07 синий медный с 5 насадками в чехле и расческами
+                  </div>
+                  <div class="offers__booking">
+                    <span class="discount__in-stock">В наличии</span>
+                    <span class="discount__discount-amount">-15%</span>
+                    <span class="offers__last-price">59 990Р</span>
+                    <span class="offers__previous-price">69 990 Р</span>
+                  </div>
+                  <div class="offers__add-to-card">
+                    <div class="offers__product-count">
+                      <button class="count__btn count__btn--minus">−</button>
+                      <div class="offers__total-count">1</div>
+                      <button class="count__btn count__btn--plus">+</button>
+                    </div>
+                    <button class="offers__card-filling">В корзину</button>
+                  </div>
+                </div>
+              </article>
+              <article class="offers__list-item">
+                <div class="offers__info">
+                  <div class="offers__image">
+                    <img src="./content/offer-2.png" alt="Серый фен DYSON с разными насадками" />
+                  </div>
+                  <div class="offers__text">
+                    Фен Dyson Supersonic HD07 с 5 насадками и подставкой
+                  </div>
+                  <div class="offers__booking">
+                    <span class="discount__in-stock">В наличии</span>
+                    <span class="discount__discount-amount">-15%</span>
+                    <span class="offers__last-price">47 990Р</span>
+                    <span class="offers__previous-price">51 990 Р</span>
+                  </div>
+                  <div class="offers__add-to-card">
+                    <div class="offers__product-count">
+                      <button class="count__btn count__btn--minus">−</button>
+                      <div class="offers__total-count">1</div>
+                      <button class="count__btn count__btn--plus">+</button>
+                    </div>
+                    <button class="offers__card-filling">В корзину</button>
+                  </div>
+                </div>
+              </article>
+              <article class="offers__list-item">
+                <div class="offers__info">
+                  <div class="offers__image">
+                    <img
+                      src="./content/offer-3.png"
+                      alt="Фиолетовый фен DYSON с разными насадками"
+                    />
+                  </div>
+                  <div class="offers__text">
+                    Фен Dyson Supersonic 4 насадки HD03 с чехлом для хранения цвет сирень
+                  </div>
+                  <div class="offers__booking">
+                    <span class="discount__in-stock">В наличии</span>
+                    <span class="discount__discount-amount">-15%</span>
+                    <span class="offers__last-price">46 990Р</span>
+                    <span class="offers__previous-price">51 990 Р</span>
+                  </div>
+                  <div class="offers__add-to-card">
+                    <div class="offers__product-count">
+                      <button class="count__btn count__btn--minus">−</button>
+                      <div class="offers__total-count">1</div>
+                      <button class="count__btn count__btn--plus">+</button>
+                    </div>
+                    <button class="offers__card-filling">В корзину</button>
+                  </div>
+                </div>
+              </article>
+            </ul>
+          </div>
+          <div class="offers__footer">
+            <div class="offers__select-page">
+              <button class="select-page__previous-page">
+                <img src="./icons/previous-page.svg" alt="" />
+              </button>
+              <button class="select-page__next-page">
+                <img src="./icons/next-page.svg" alt="" />
+              </button>
+              <div class="select-page__page-number">1 из 3</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <div class="reviews__container container">
+          <div class="reviews__header">
+            <div class="reviews__main-title main__title">
+              <div class="reviews__count main__title">Отзывы <span>151</span></div>
+            </div>
+            <div class="reviews__leave-reviews">
+              <div class="reviews__rate-it">
+                <div class="rate-it__stars-count">5 <span>/ 5</span></div>
+                <div class="stars leave-reviews__stars">
+                  <img class="stars__star-image" src="./icons/Star.svg" alt="" />
+                  <img class="stars__star-image" src="./icons/Star.svg" alt="" />
+                  <img class="stars__star-image" src="./icons/Star.svg" alt="" />
+                  <img class="stars__star-image" src="./icons/Star.svg" alt="" />
+                  <img class="stars__star-image" src="./icons/Star.svg" alt="" />
+                </div>
+              </div>
+              <button class="reviews__add-review">Написать отзыв</button>
+            </div>
+          </div>
+
+          <article class="review-card">
+            <!-- Левая колонка: Автор и рейтинг -->
+            <div class="review-card__author">
+              <span class="review-card__name">Ольга</span>
+              <div class="review-card__stars stars" aria-label="Оценка 5 из 5">
+                <!-- Иконки звезд -->
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+              </div>
+            </div>
+            <!-- Правая колонка: Основной контент -->
+            <div class="review-card__body">
+              <h3 class="review-card__title">Это лучший фен!</h3>
+              <time class="review-card__date" datetime="2022-05-21">21/05/2022</time>
+              <p class="review-card__text">
+                Пользуюсь около месяца, хочу поделиться впечатлениями. Во-первых, фен очень легкий,
+                удобно лежит в руке, не скользит. Кнопка включения и выключения расположена удобно,
+                а не где-то сбоку. Мощность у фена хорошая, волосы сушит быстро
+              </p>
+              <div class="review-card__gallery">
+                <div class="review-card__photos">
+                  <img src="./content/review.png" alt="Фото отзыва" />
+                  <img src="./content/review.png" alt="Фото отзыва" />
+                  <img src="./content/review.png" alt="Фото отзыва" />
+                </div>
+                <button class="review-card__more-photos" type="button">Смотреть все фото</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <!-- Левая колонка: Автор и рейтинг -->
+            <div class="review-card__author">
+              <span class="review-card__name">Татьяна</span>
+              <div class="review-card__stars stars" aria-label="Оценка 5 из 5">
+                <!-- Иконки звезд -->
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+              </div>
+            </div>
+            <!-- Правая колонка: Основной контент -->
+            <div class="review-card__body">
+              <h3 class="review-card__title">Отличный фен</h3>
+              <time class="review-card__date" datetime="2022-05-21">21/05/2022</time>
+              <p class="review-card__text">
+                Фен очень понравился. Качественный, стильный: свою цену полностью оправдывает!
+              </p>
+              <div class="review-card__gallery">
+                <!-- <div class="review-card__photos"></div> -->
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <!-- Левая колонка: Автор и рейтинг -->
+            <div class="review-card__author">
+              <span class="review-card__name">Виктор</span>
+              <div class="review-card__stars stars" aria-label="Оценка 5 из 5">
+                <!-- Иконки звезд -->
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                <img class="review-card__star" src="./icons/Star.svg" alt="" />
+              </div>
+            </div>
+            <!-- Правая колонка: Основной контент -->
+            <div class="review-card__body">
+              <h3 class="review-card__title">Быстро пришел</h3>
+              <time class="review-card__date" datetime="2022-05-21">21/05/2022</time>
+              <p class="review-card__text">
+                Фен очень понравился. Качественный, стильный: свою цену полностью оправдывает!
+              </p>
+              <div class="review-card__gallery">
+                <div class="review-card__photos">
+                  <img src="./content/review.png" alt="Фото отзыва" />
+                </div>
+                <button class="review-card__more-photos" type="button">Смотреть все фото</button>
+              </div>
+            </div>
+          </article>
+          <div class="reviews__footer">
+            <a class="show-more__main-button" href="#">
+              <span>Показать еще</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <div class="faq-container container">
+          <h3 class="faq-title main__title">FAQ — Часто задаваемые вопросы</h3>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span>
+                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+              </summary>
+              <div class="faq-answer">
+                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span
+                  >В рукоятку встроен датчик температуры, благодаря которому она не поднимается выше
+                  100 градусов?</span
+                >
+                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+              </summary>
+              <div class="faq-answer">
+                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span>
+                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+              </summary>
+              <div class="faq-answer">
+                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span>
+                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+              </summary>
+              <div class="faq-answer">
+                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span
+                  >В рукоятку встроен датчик температуры, благодаря которому она не поднимается выше
+                  100 градусов?</span
+                >
+                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+              </summary>
+              <div class="faq-answer">
+                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span>
+                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+              </summary>
+              <div class="faq-answer">
+                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="news">
+        <div class="news__container container">
+          <div class="news__title main__title">Новости</div>
+          <div class="news__content">
+            <article class="news__article">
+              <img class="news__image" src="./content/64.png" alt="Изображение продукции Dyson" />
+              <time class="news__date">21 декабря 2022</time>
+              <h3 class="news__article-title">Есть ли безопасные выпрямители для волос</h3>
+              <p class="news__article-text">
+                Добавьте объем и рельеф коротким волосам. Посмотрите, как создать мягкие, легкие
+                локоны и волны на коротких волосах и волосах средней длины.
+              </p>
+              <a class="news__article-button show-more__pink-button" href="#"> Читать далее </a>
+            </article>
+            <article class="news__article">
+              <img class="news__image" src="./content/64.png" alt="Изображение продукции Dyson" />
+              <time class="news__date">21 декабря 2022</time>
+              <h3 class="news__article-title">Есть ли безопасные выпрямители для волос</h3>
+              <p class="news__article-text">
+                Добавьте объем и рельеф коротким волосам. Посмотрите, как создать мягкие, легкие
+                локоны и волны на коротких волосах и волосах средней длины.
+              </p>
+              <a class="news__article-button show-more__pink-button" href="#"> Читать далее </a>
+            </article>
+            <article class="news__article">
+              <img class="news__image" src="./content/64.png" alt="Изображение продукции Dyson" />
+              <time class="news__date">21 декабря 2022</time>
+              <h3 class="news__article-title">Есть ли безопасные выпрямители для волос</h3>
+              <p class="news__article-text">
+                Добавьте объем и рельеф коротким волосам. Посмотрите, как создать мягкие, легкие
+                локоны и волны на коротких волосах и волосах средней длины.
+              </p>
+              <a class="news__article-button show-more__pink-button" href="#"> Читать далее </a>
+            </article>
+          </div>
+          <div class="news__footer">
+            <a class="show-more__main-button" href="#">
+              <span>Показать еще</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="form">
+        <div class="form__container container">
+          <!-- Форма 1: Свяжитесь с нами -->
+          <form class="form__contact-us" action="#" method="post">
+            <h2 class="contact-us__title main__title">Свяжитесь с нами</h2>
+            <div class="form__fields">
+              <label class="form__label" for="user-name"></label>
+              <input
+                class="form__input"
+                type="text"
+                id="user-name"
+                placeholder="Ваше имя"
+                required
+              />
+              <label class="form__label" for="user-phone"></label>
+              <input
+                class="form__input"
+                type="tel"
+                id="user-phone"
+                placeholder="Ваш номер телефона"
+                required
+              />
+              <button type="submit" class="form__button">Оставить заявку</button>
+            </div>
+          </form>
+
+          <!-- Форма 2: Подписка на новости -->
+          <form class="form__subscribe" action="#" method="post">
+            <h2 class="form__subscribe__title main__title">Подпишитесь на новости</h2>
+            <div class="form__fields">
+              <label class="form__label" for="user-mail"></label>
+              <input
+                class="form__input"
+                type="email"
+                id="user-mail"
+                placeholder="Ваш e-mail"
+                required
+              />
+              <button type="submit" class="form__button">Подписаться</button>
+
+              <label class="form__checkbox-label">
+                <input type="checkbox" class="form__checkbox" required />
+                <span class="form__custom-checkbox">
+                  <svg
+                    class="form__checkbox-icon"
+                    width="11"
+                    height="7"
+                    viewBox="0 0 11 7"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.8047 0.186387C11.0651 0.434902 11.0651 0.837825 10.8047 1.08634L4.80474 6.81361C4.54439 7.06213 4.12228 7.06213 3.86193 6.81361L0.195262 3.31361C-0.0650874 3.0651 -0.0650874 2.66217 0.195262 2.41366C0.455612 2.16514 0.877722 2.16514 1.13807 2.41366L4.33333 5.46368L9.86193 0.186387C10.1223 -0.0621289 10.5444 -0.0621289 10.8047 0.186387Z"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      fill="#C5358C"
+                    />
+                  </svg>
+                </span>
+                <span class="form__rights">
+                  Я ознакомлен(а) с политикой конфиденциальности и согласен(а) с обработкой
+                  персональных данных
+                </span>
+              </label>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__wrapper container">
+        <a href="#" class="footer__logo-link">
+          <img class="footer__logo" src="/titles/лого.svg" alt="Dyson" />
+        </a>
+        <div class="footer__company-info">О компании</div>
+        <div class="footer__container">
+          <!-- Магазин -->
+          <nav class="footer__column">
+            <h3 class="footer__title">Магазин</h3>
+            <ul class="footer__list">
+              <li><a href="#" class="footer__link">Фены Dyson Supersonic</a></li>
+              <li><a href="#" class="footer__link">Стайлеры Dyson Airwrap</a></li>
+              <li><a href="#" class="footer__link">Выпрямители Dyson Corrale</a></li>
+              <li><a href="#" class="footer__link">Пылесосы</a></li>
+              <li><a href="#" class="footer__link">Климатическая техника</a></li>
+              <li><a href="#" class="footer__link">Освещение</a></li>
+              <li><a href="#" class="footer__link">Аксессуары</a></li>
+            </ul>
+          </nav>
+
+          <!-- Общая информация -->
+          <nav class="footer__column">
+            <h3 class="footer__title">Общая информация</h3>
+            <ul class="footer__list">
+              <li><a href="#" class="footer__link">Новости</a></li>
+              <li><a href="#" class="footer__link">Доставка</a></li>
+              <li><a href="#" class="footer__link">Гарантия</a></li>
+              <li><a href="#" class="footer__link">Оплата товара</a></li>
+              <li><a href="#" class="footer__link">Свяжитесь с нами</a></li>
+              <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+              <li><a href="#" class="footer__link">Договор оферты</a></li>
+            </ul>
+          </nav>
+
+          <!-- Акции -->
+
+          <nav class="footer__column">
+            <ul class="footer__list">
+              <h3 class="footer__title">Акции</h3>
+              <li><a href="#" class="footer__link">Подарочная коллекция</a></li>
+              <li><a href="#" class="footer__link">Эксклюзивные предложения</a></li>
+            </ul>
+          </nav>
+
+          <!-- Контакты и соцсети -->
+
+          <div class="footer__column footer__column--contacts">
+            <div class="footer__contacts">
+              <h3 class="footer__title">Отдел логистики:</h3>
+              <a href="tel:+79998004554" class="footer__phone">+7 (999) 800-45-54</a>
+              <div class="footer__socials">
+                <a href="#" aria-label="Telegram"><img src="./icons/TG.svg" alt="" /></a>
+                <a href="#" aria-label="VK"><img src="./icons/VK.svg" alt="" /></a>
+                <a href="#" aria-label="YouTube"
+                  ><img src="./icons/YouTube_black 1.svg" alt=""
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <p class="footer__copyright">
+              Интернет-магазин dysmarket.ru, 2022 © Все права защищены.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

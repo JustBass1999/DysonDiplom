@@ -1,0 +1,245 @@
+.header {
+  background-color: var(--bg-dark);
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Задает темный фирменный фон шапки.
+  2. position: sticky вместе с top: 0 закрепляет хедер наверху экрана при скролле без использования хаотичных отрицательных марджинов.
+  3. z-index: 3 гарантирует, что шапка всегда перекрывает нижележащий контент.
+*/
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: min(var(--container-width), 100% - var(--container-padding) * 2);
+}
+
+@media (width<=768px) {
+  .header__container {
+    max-height: 76px;
+  }
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Выстраивает элементы хедера по флекс-сетке с отступами.
+  2. width через функцию min() ограничивает максимальную ширину шапки и защищает от прилипания к краям экрана за счет паддингов.
+  3. Ограничивает максимальную высоту хедера на планшетах и мобилках.
+*/
+
+.header__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 6px;
+}
+
+@media (width<=1400px) {
+  .header__buttons {
+    gap: 40px;
+  }
+}
+@media (width<=768px) {
+  .header__buttons {
+    gap: 25px;
+  }
+}
+@media (width<=540px) {
+  .header__buttons {
+    gap: 20px;
+  }
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Управляет группой элементов интерфейса слева (бургер и логотип), адаптируя промежутки (gap) под разные разрешения экрана.
+*/
+
+@media (width>1400px) {
+  .header__burger {
+    display: none;
+    z-index: 2;
+  }
+}
+
+@media (width<=1400px) {
+  .header__burger {
+    display: flex;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: none;
+    z-index: 2;
+    padding: 0;
+    cursor: pointer;
+    stroke: #fff;
+    transition: stroke var(--transition-time);
+  }
+}
+
+@media (any-hover: hover) {
+  .header__burger:hover {
+    stroke: var(--accent-color);
+  }
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Полностью скрывает кнопку бургера на десктопах (> 1400px), где навигация развернута по умолчанию.
+  2. Включает и стилизует кнопку бургера на экранах меньше 1400px, убирая стандартные рамки браузера и добавляя ховер-эффекты.
+*/
+
+.header__logo {
+  display: inline-block;
+  max-width: 183px;
+}
+
+@media (width>=1580px) {
+  .header__logo {
+    flex-shrink: 0;
+  }
+}
+
+@media (width<=1200px) {
+  .header__logo {
+    margin-right: 0;
+  }
+}
+
+@media (width<=768px) {
+  .header__logo-icon {
+    max-width: 142px;
+    height: auto;
+    margin: 9px 0 7px;
+  }
+}
+
+@media (width<=540px) {
+  .header__logo-icon {
+    margin: 5.5px 0 2.5px;
+    max-width: 94px;
+    max-height: 39px;
+  }
+}
+
+@media (any-hover: hover) {
+  .header__logo-icon:hover {
+    stroke: var(--accent-color);
+  }
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Ограничивает размеры логотипа, предотвращая его деформацию.
+  2. Точечно адаптирует размеры и отступы иконки логотипа под различные мобильные и десктопные брейкпоинты.
+*/
+
+@media (width>1400px) {
+  .header__menu {
+    flex-grow: 1;
+  }
+}
+
+@media (width<=1400px) {
+  .header__menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -100vw;
+    padding-top: 100px;
+    z-index: 1;
+    min-width: 250px;
+    padding-left: 15px;
+    background-color: var(--bg-dark);
+    box-shadow: -2px 0 20px var(--bg-dark);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      left var(--transition-time),
+      opacity var(--transition-time),
+      visibility var(--transition-time);
+  }
+  .header__menu--open {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+  }
+}
+
+@media (width<=768px) {
+  .header__menu {
+    min-width: 200px;
+    padding-top: 80px;
+  }
+}
+@media (width<=540px) {
+  .header__menu {
+    min-width: 175px;
+    padding-top: 60px;
+  }
+}
+
+@media (width<=1400px) {
+  .header__menu .menu__list {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+  }
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. На десктопах растягивает меню по свободной ширине (flex-grow: 1).
+  2. На мобильных устройствах превращает меню в выдвижную панель (position: fixed) с анимацией появления через left, opacity и visibility, скрывая её за пределами экрана (left: -100vw).
+  3. Класс .header__menu--open плавно выезжает на экран.
+  4. Перестраивает пункты списка в вертикальную колонку на мобильных экранах.
+*/
+
+.header__orders-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  stroke: #fff;
+  transition: stroke var(--transition-time);
+  display: flex;
+  align-items: center;
+}
+
+.header__orders-icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+@media (any-hover: hover) {
+  .header__orders-icon:hover {
+    stroke: var(--accent-color);
+    transition: stroke var(--transition-time);
+  }
+}
+
+@media (width<=768px) {
+  .header__orders-icon {
+    max-width: 31px;
+    max-height: 31px;
+  }
+}
+@media (width<=540px) {
+  .header__orders-icon {
+    max-width: 24px;
+    max-height: 24px;
+  }
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Сбрасывает стандартные стили кнопки корзины/заказов.
+  2. Обеспечивает плавное изменение цвета иконки при наведении мыши.
+  3. Адаптирует размер иконки корзины под уменьшающиеся экраны планшетов и смартфонов.
+*/

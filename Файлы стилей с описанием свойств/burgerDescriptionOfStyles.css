@@ -1,0 +1,79 @@
+.burger__icon-menu,
+.burger__icon-cross {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  transition:
+    opacity 0.7s ease,
+    transform 0.5s ease;
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Фиксирует базовый размер иконок гамбургера и крестика.
+  2. position: absolute накладывает иконки друг на друга в одной точке контейнера.
+  3. transition обеспечивает плавную анимацию прозрачности и вращения при переключении состояния.
+*/
+
+.burger__icon-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: rotate(0deg);
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Делает иконку меню полностью видимой и активной в исходном состоянии.
+*/
+
+.burger__icon-cross {
+  opacity: 0;
+  visibility: hidden;
+  transform: rotate(-90deg);
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Скрывает иконку крестика в обычном состоянии (opacity: 0, visibility: hidden) и поворачивает её для красивого эффекта появления.
+*/
+
+.burger--open .burger__icon-menu {
+  opacity: 0;
+  visibility: hidden;
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Скрывает иконку меню при открытии мобильного меню (активации класса .burger--open).
+*/
+
+.burger--open .burger__icon-cross {
+  opacity: 1;
+  visibility: visible;
+  transform: rotate(0deg);
+  left: 12px;
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Проявляет иконку крестика, возвращает ей нулевой угол поворота и корректирует позицию (left) при открытом меню.
+*/
+
+@media (width<= 768px) {
+  .burger__icon-menu,
+  .burger__icon-cross {
+    width: 40px;
+    height: 40px;
+  }
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Уменьшает размер иконок интерфейса под планшетные экраны (<= 768px).
+*/
+
+@media (width<= 540px) {
+  .burger__icon-menu,
+  .burger__icon-cross {
+    width: 30px;
+    height: 30px;
+  }
+}
+/* 
+  Проблемы, которые решает этот набор:
+  1. Компактно масштабирует иконки под мобильные экраны малых размеров (<= 540px).
+*/
