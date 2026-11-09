@@ -4,11 +4,16 @@
 
 .content__container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
 }
 
-@media (width <=768px) {
+@media (width>=720px) {
+  .content__container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (width<720px) {
   .content__container {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -16,154 +21,112 @@
 }
 
 .content__article {
+  justify-content: start;
   border-radius: 3px;
   box-shadow: 5px 5px 20px 3px #f1eeee;
+  overflow: hidden;
+  text-decoration: none;
 }
 
-.content__text {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  padding-left: 40px;
+
+.content-img {
+  background-color: #ffffff;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-@media (width <=1400px) {
+@media (width>=540px) {
   .content__text {
-    padding-left: 30px;
+    padding-top: clamp(10px, 0.208rem + 0.87vw, 20px);
+    padding-inline: clamp(13px, -0.313rem + 2.34vw, 40px);
+    padding-bottom: clamp(15px, 0.313rem + 1.3vw, 30px);
   }
 }
-
-@media (width <=992px) {
+@media (width<=540px) {
   .content__text {
-    padding-left: 20px;
-  }
-}
-
-@media (width <=768px) {
-  .content__text {
-    padding-top: 10px;
     padding-left: 12px;
-    padding-bottom: 15px;
-  }
-}
-
-.content__text a {
-  color: var(--text-dark);
-}
-
-/** Перекраска при наведении всего блока в черный */
-
-@media (any-hover: hover) {
-  .content__text:hover {
-    background-color: var(--text-dark);
-  }
-
-  /** Перекраска всего текста в белый на черном фоне */
-
-  .content__text:hover h3 {
-    color: var(--text-light);
-  }
-
-  .content__text:hover a {
-    color: var(--text-light);
+    padding-right: 42px;
+    padding-bottom: 16px;
   }
 }
 
 .content__title {
   font-family: var(--second-family);
-  font-size: 30px;
+  font-size: clamp(16px, 0.417rem + 1.22vw, 30px);
   color: var(--text-dark);
-  margin-bottom: 11px;
+  margin-bottom: clamp(5px, 0.063rem + 0.52vw, 11px);
+  transition: color 0.3s ease;
 }
 
-@media (width <=1600px) {
+@media (width>768px) {
   .content__title {
-    font-size: 28px;
+    font-size: clamp(16px, 0.417rem + 1.22vw, 30px);
   }
 }
 
-@media (width <=1400px) {
+@media (width<=768px) {
   .content__title {
-    font-size: 24px;
-    margin-bottom: 9px;
-  }
-}
-
-@media (width <=1200px) {
-  .content__title {
-    font-size: 20px;
-  }
-}
-
-@media (width <=992px) {
-  .content__title {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-}
-
-@media (width <=390px) {
-  .content__title {
-    font-size: 13px;
-    margin-bottom: 8px;
+    font-size: clamp(13px, 0.619rem + 0.79vw, 16px);
   }
 }
 
 .content__info {
-  font-size: 24px;
   font-family: var(--font-family);
+  font-size: clamp(12px, 0.25rem + 1.04vw, 24px);
+  color: var(--text-dark);
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  transition: color 0.3s ease;
+}
+
+@media (width>768px) {
+  .content__info {
+    font-size: clamp(12px, 0.25rem + 1.04vw, 24px);
+  }
+}
+
+@media (width<=540px) {
+  .content__info {
+    font-size: 11px;
+  }
 }
 
 .content__info::after {
   display: inline-block;
   content: "";
-  width: 24px;
-  height: 24px;
+  vertical-align: middle;
+  width: clamp(12px, 0.25rem + 1.04vw, 24px);
+  height: clamp(12px, 0.25rem + 1.04vw, 24px);
+  transform: translateY(2px);
 
   -webkit-mask: url("../../icons/arrow-black-right.svg") no-repeat center / contain;
   mask: url("../../icons/arrow-black-right.svg") no-repeat center / contain;
   background-color: currentColor;
-  transform: translateY(3px);
 }
 
-@media (width <=1400px) {
-  .content__info {
-    font-size: 20px;
-  }
-}
-
-@media (width <=1200px) {
-  .content__info {
-    font-size: 18px;
-  }
-}
-@media (width <=992px) {
-  .content__info {
-    font-size: 14px;
-    gap: 10px;
-  }
+@media (width<=540px) {
   .content__info::after {
-    width: 18px;
-    height: 18px;
+    width: 11px;
+    height: 11px;
   }
 }
 
-@media (width <=768px) {
-  .content__info {
-    font-size: 12px;
+@media (any-hover: hover) {
+  .content__article:hover {
+    background-color: var(--text-dark);
+    transition: background-color 0.3s ease;
   }
-  .content__info::after {
-    transform: translateY(2px);
-  }
-}
 
-@media (width <=390px) {
-  .content__info {
-    font-size: 11px;
+  .content__article:hover .content__text {
+    background-color: var(--text-dark);
+    transition: background-color 0.3s ease;
   }
-  .content__info::after {
-    transform: translateY(1px);
+
+  .content__article:hover .content__title,
+  .content__article:hover .content__info {
+    color: var(--text-light);
+    transition: background-color 0.3s ease;
   }
 }
