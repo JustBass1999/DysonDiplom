@@ -38,7 +38,12 @@ h1 {
 }
 @media (width<=992px) {
   .main__title {
-    font-size: 20px;
+    font-size: 26px;
+  }
+}
+@media (width<=540px) {
+  .main__title {
+    font-size: 19px;
   }
 }
 
