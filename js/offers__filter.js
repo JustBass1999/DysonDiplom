@@ -33,3 +33,4 @@ document.addEventListener("click", (e) => {
     filter.classList.remove("offers__filter_open");
   }
 });
+
