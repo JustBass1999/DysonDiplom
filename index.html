@@ -256,7 +256,7 @@
           <h2 class="advantages__title main__title">Почему выбирают нас</h2>
           <ul class="advantages__list">
             <li class="advantages__item">
-              <img src="./icons/advantages/shoping-card.svg" class="item__img" alt="" />
+              <img src="./icons/advantages/shoping-cart.svg" class="item__img" alt="" />
               <h3 class="item__title">Широкий ассортимент</h3>
               <p class="item__text">
                 Большой выбор техники <br />
@@ -314,8 +314,9 @@
               <input
                 type="checkbox"
                 id="popular-toggle"
-                class="offers__popular-checkbox"
-                alt="Показать все предложения"
+                class="offers__popular-checkbox visually-hidden"
+                aria-label="Показать все популярные запросы"
+                
               />
               <div class="popular__list">
                 <div class="offers__popular-first--line">
@@ -350,12 +351,12 @@
             <!-- Шапка селекта -->
             <div class="offers__filter-button">
               <span class="offers__filter-text">Сначала популярные</span>
-              <img class="offers__filter-arrow" width="10px" height="17px" />
+              <img src="./icons/down-arrow.svg" class="offers__filter-arrow" width="10px" height="17px" />
             </div>
 
             <!-- Выпадающий список -->
             <ul class="offers__filter-list">
-              <li class="offers__filter-option offers__filter-option_selected" data-value="popular">
+              <li class="offers__filter-option offers__filter-option--selected" data-value="popular">
                 <span>Сначала популярные</span>
                 <span class="offers__filter-check">✓</span>
               </li>
@@ -377,16 +378,17 @@
               </li>
             </ul>
           </div>
+
           <div class="offers__main">
             <ul class="offers__list">
-              <article class="offers__list-item">
-                <div class="offers__info">
+              <li class="offers__list-item">
+                <article class="offers__info">
                   <div class="offers__image">
                     <img src="./content/offer-1.png" alt="Синий фен Dyson с насадками" />
                   </div>
-                  <div class="offers__text">
+                  <h3 class="offers__text">
                     Фен Dyson Supersonic HD07 синий медный с 5 насадками в чехле и расческами
-                  </div>
+                  </h3>
                   <div class="offers__booking">
                     <span class="discount__in-stock">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
@@ -395,22 +397,24 @@
                   </div>
                   <div class="offers__add-to-card">
                     <div class="offers__product-count">
-                      <button class="count__btn count__btn--minus">−</button>
-                      <div class="offers__total-count">1</div>
-                      <button class="count__btn count__btn--plus">+</button>
+                      <button class="count__btn count__btn--minus" type="button" aria-label="Уменьшить количество">−</button>
+                      <div class="offers__footer">1</div>
+                      <button class="count__btn count__btn--plus" type="button" aria-label="Увеличить количество">+</button>
                     </div>
-                    <button class="offers__card-filling">В корзину</button>
+                    <button class="offers__card-filling" type="button">В корзину</button>
                   </div>
-                </div>
-              </article>
-              <article class="offers__list-item">
-                <div class="offers__info">
+                </article>
+              </li>
+
+
+              <li class="offers__list-item">
+                <article class="offers__info">
                   <div class="offers__image">
                     <img src="./content/offer-2.png" alt="Серый фен DYSON с разными насадками" />
                   </div>
-                  <div class="offers__text">
+                  <h3 class="offers__text">
                     Фен Dyson Supersonic HD07 с 5 насадками и подставкой
-                  </div>
+                  </h3>
                   <div class="offers__booking">
                     <span class="discount__in-stock">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
@@ -419,25 +423,25 @@
                   </div>
                   <div class="offers__add-to-card">
                     <div class="offers__product-count">
-                      <button class="count__btn count__btn--minus">−</button>
+                      <button class="count__btn count__btn--minus" type="button" aria-label="Уменьшить количество">−</button>
                       <div class="offers__total-count">1</div>
-                      <button class="count__btn count__btn--plus">+</button>
+                      <button class="count__btn count__btn--plus" type="button" aria-label="Увеличить количество">+</button>
                     </div>
-                    <button class="offers__card-filling">В корзину</button>
+                    <button class="offers__card-filling" type="button">В корзину</button>
                   </div>
-                </div>
-              </article>
-              <article class="offers__list-item">
-                <div class="offers__info">
+                </article>
+              </li>
+              <li class="offers__list-item">
+                <article class="offers__info">
                   <div class="offers__image">
                     <img
                       src="./content/offer-3.png"
                       alt="Фиолетовый фен DYSON с разными насадками"
                     />
                   </div>
-                  <div class="offers__text">
+                  <h3 class="offers__text">
                     Фен Dyson Supersonic 4 насадки HD03 с чехлом для хранения цвет сирень
-                  </div>
+                  </h3>
                   <div class="offers__booking">
                     <span class="discount__in-stock">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
@@ -446,22 +450,22 @@
                   </div>
                   <div class="offers__add-to-card">
                     <div class="offers__product-count">
-                      <button class="count__btn count__btn--minus">−</button>
+                      <button class="count__btn count__btn--minus" type="button" aria-label="Уменьшить количество">−</button>
                       <div class="offers__total-count">1</div>
-                      <button class="count__btn count__btn--plus">+</button>
+                      <button class="count__btn count__btn--plus" type="button" aria-label="Увеличить количество">+</button>
                     </div>
-                    <button class="offers__card-filling">В корзину</button>
+                    <button class="offers__card-filling" type="button">В корзину</button>
                   </div>
-                </div>
-              </article>
-              <article class="offers__list-item">
-                <div class="offers__info">
+                </article>
+              </li>
+              <li class="offers__list-item">
+                <article class="offers__info">
                   <div class="offers__image">
                     <img src="./content/offer-1.png" alt="Синий фен Dyson с насадками" />
                   </div>
-                  <div class="offers__text">
+                  <h3 class="offers__text">
                     Фен Dyson Supersonic HD07 синий медный с 5 насадками в чехле и расческами
-                  </div>
+                  </h3>
                   <div class="offers__booking">
                     <span class="discount__in-stock">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
@@ -470,22 +474,22 @@
                   </div>
                   <div class="offers__add-to-card">
                     <div class="offers__product-count">
-                      <button class="count__btn count__btn--minus">−</button>
+                      <button class="count__btn count__btn--minus" type="button" aria-label="Уменьшить количество">−</button>
                       <div class="offers__total-count">1</div>
-                      <button class="count__btn count__btn--plus">+</button>
+                      <button class="count__btn count__btn--plus" type="button" aria-label="Увеличить количество">+</button>
                     </div>
-                    <button class="offers__card-filling">В корзину</button>
+                    <button class="offers__card-filling" type="button">В корзину</button>
                   </div>
-                </div>
-              </article>
-              <article class="offers__list-item">
-                <div class="offers__info">
+                </article>
+              </li>
+              <li class="offers__list-item">
+                <article class="offers__info">
                   <div class="offers__image">
                     <img src="./content/offer-2.png" alt="Серый фен DYSON с разными насадками" />
                   </div>
-                  <div class="offers__text">
+                  <h3 class="offers__text">
                     Фен Dyson Supersonic HD07 с 5 насадками и подставкой
-                  </div>
+                  </h3>
                   <div class="offers__booking">
                     <span class="discount__in-stock">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
@@ -494,25 +498,25 @@
                   </div>
                   <div class="offers__add-to-card">
                     <div class="offers__product-count">
-                      <button class="count__btn count__btn--minus">−</button>
+                      <button class="count__btn count__btn--minus" type="button" aria-label="Уменьшить количество">−</button>
                       <div class="offers__total-count">1</div>
-                      <button class="count__btn count__btn--plus">+</button>
+                      <button class="count__btn count__btn--plus" type="button" aria-label="Увеличить количество">+</button>
                     </div>
-                    <button class="offers__card-filling">В корзину</button>
+                    <button class="offers__card-filling" type="button">В корзину</button>
                   </div>
-                </div>
-              </article>
-              <article class="offers__list-item">
-                <div class="offers__info">
+                </article>
+              </li>
+              <li class="offers__list-item">
+                <article class="offers__info">
                   <div class="offers__image">
                     <img
                       src="./content/offer-3.png"
                       alt="Фиолетовый фен DYSON с разными насадками"
                     />
                   </div>
-                  <div class="offers__text">
+                  <h3 class="offers__text">
                     Фен Dyson Supersonic 4 насадки HD03 с чехлом для хранения цвет сирень
-                  </div>
+                  </h3>
                   <div class="offers__booking">
                     <span class="discount__in-stock">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
@@ -521,22 +525,22 @@
                   </div>
                   <div class="offers__add-to-card">
                     <div class="offers__product-count">
-                      <button class="count__btn count__btn--minus">−</button>
+                      <button class="count__btn count__btn--minus" type="button" aria-label="Уменьшить количество">−</button>
                       <div class="offers__total-count">1</div>
-                      <button class="count__btn count__btn--plus">+</button>
+                      <button class="count__btn count__btn--plus" type="button" aria-label="Увеличить количество">+</button>
                     </div>
-                    <button class="offers__card-filling">В корзину</button>
+                    <button class="offers__card-filling" type="button">В корзину</button>
                   </div>
-                </div>
-              </article>
+                </article>
+              </li>
             </ul>
           </div>
-          <div class="offers__footer">
+          <div class="offers__minus-button">
             <div class="offers__select-page">
-              <button class="select-page__previous-page">
+              <button class="select-page__previous-page" type="button" aria-label="Предыдущая страница">
                 <img src="./icons/previous-page.svg" alt="" />
               </button>
-              <button class="select-page__next-page">
+              <button class="select-page__next-page" type="button" aria-label="Следующая страница">
                 <img src="./icons/next-page.svg" alt="" />
               </button>
               <div class="select-page__page-number">1 из 3</div>

@@ -1,0 +1,709 @@
+/* Назначение: Устанавливает фоновый цвет для всей секции товаров, используя переменную цвета. */
+.offers {
+  background-color: var(--background-grey);
+}
+
+/* Назначение: Задает адаптивные вертикальные отступы (сверху и снизу) для главного контейнера секции. */
+.offers__container {
+  padding-block: clamp(80px, 2.083rem + 6.08vw, 150px);
+}
+
+/** offers__header */
+
+/* Назначение: Превращает шапку секции во флекс-контейнер с вертикальным расположением элементов и отступом между ними. */
+.offers__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Назначение: Регулирует нижний отступ заголовка (с адаптацией под мобильные устройства) и задает цвет текста для акцентного тега span. */
+.offers__title {
+  padding-bottom: 30px;
+}
+
+@media (width<=768px) {
+  .offers__title {
+    padding-bottom: 25px;
+  }
+}
+
+.offers__title span {
+  color: var(--button-cover);
+}
+
+/* Назначение: Селектор для скрытого чекбокса, отвечающего за логику интерактивного раскрытия тегов без JavaScript. */
+.offers__popular-checkbox {
+  /* Стили скрытия берет на себя .visually-hidden */
+}
+
+/* Назначение: Управляет внешним отступом блока популярных тегов снизу и правилами переноса на узких экранах. */
+@media (width>1200px) {
+  .offers__popular {
+    margin-bottom: 50px;
+  }
+}
+@media (width<=1200px) {
+  .offers__popular {
+    margin-bottom: clamp(20px, -0.417rem + 3.47vw, 35px);
+  }
+}
+
+@media (width<=540px) {
+  .offers__popular {
+    flex-wrap: wrap;
+    gap: 10px 0;
+  }
+}
+
+/* Назначение: Формирует сетку (Grid) для списка популярных тегов с автоматическим распределением колонок. */
+.popular__list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, auto);
+}
+
+/* Назначение: Выстраивает элементы первой строки в ряд с помощью Flexbox без переноса и с адаптивным уменьшением отступов. */
+.offers__popular-first--line {
+  display: flex;
+  justify-content: start;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+@media (width<=1500px) {
+  .offers__popular-first--line {
+    gap: 15px;
+  }
+}
+
+/* Назначение: Стилизует отдельные плашки-теги (скругление, рамка, центрирование) с ограничением текста до двух строк на мобильных экранах. */
+.offers__popular-title {
+  font-size: clamp(11px, 0.353rem + 0.54vw, 16px);
+  line-height: 130%;
+  border: 1px solid #000;
+  border-radius: 31px;
+  padding: 6px 20px 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (width<=650px) {
+  .offers__popular-title {
+    font-size: 10px;
+    padding: 3px 10px 3px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Ограничение ровно в 2 строки */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Назначение: Реализует механизм показа дополнительных тегов по клику на кнопку через состояние :checked скрытого чекбокса. */
+.offers__popular-extra--line {
+  display: flex;
+  gap: 20px;
+  grid-row: 2;
+}
+/* По умолчанию скрываем элементы второй строки */
+.offers__popular-title--extra {
+  display: none;
+}
+
+/* Когда чекбокс отмечен (кнопка нажата), показываем скрытые теги. 
+   Используем flex, чтобы они вставали ровно в общую сетку .popular__list */
+.offers__popular-checkbox:checked ~ .popular__list .offers__popular-title--extra {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .offers__popular-checkbox:checked ~ .popular__list .offers__popular-title--extra {
+    display: block;
+  }
+}
+
+/* 
+Здесь реализована интерактивная логика показа скрытых элементов по клику (без использования JavaScript) — за счет связки скрытого чекбокса и CSS-селекторов.
+
+Вот как это работает по шагам:
+
+--checkbox:checked — проверяет состояние чекбокса (поставлена ли галочка).
+
+Тильда (~) — это комбинатор общего соседа. Он говорит браузеру: «Найди элемент .popular__list, который находится на том же уровне вложенности (после инпута), когда инпут отмечен».
+
+.offers__popular-title--extra — обращается к дополнительным тегам (второй строке популярных запросов), которые по умолчанию скрыты через display: none.
+
+display: block — при наступлении этого условия (чекбокс отмечен) скрытые элементы становятся видимыми.
+
+А медиазапрос @media (max-width: 768px) дублирует это правило для мобильных устройств, гарантируя, что логика сворачивания/разворачивания списка корректно срабатывает и на экранах телефонов/планшетов.
+*/
+
+/* Назначение: Точечно скрывает конкретные теги на промежуточных разрешениях для адаптивности сетки. */
+@media (width <= 865px) {
+  /* Скрываем 4-й элемент в первой строке */
+  .popular__list .offers__popular-title:nth-child(4):not(.offers__popular-title--extra) {
+    display: none;
+  }
+
+  /* Скрываем 8-й элемент (последний во второй строке) даже при открытом чекбоксе */
+  #popular-toggle:checked ~ .popular__list .offers__popular-title--extra:nth-child(4) {
+    display: none;
+  }
+}
+
+/* Назначение: Создает интерактивную кнопку разворачивания списка, автоматически меняющую текст псевдоэлемента в зависимости от состояния чекбокса. */
+.offers__button-wrapper {
+  display: inline-flex;
+  align-self: center;
+  justify-content: end;
+}
+.offers__button {
+  position: relative;
+  display: grid;
+  align-self: end;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+}
+
+/* Базовый текст кнопки, когда чекбокс НЕ отмечен */
+.offers__button::after {
+  content: "Показать еще";
+}
+
+/* Текст кнопки, когда чекбокс отмечен */
+.offers__popular-checkbox:checked ~ .popular__list .offers__button::after {
+  content: "Скрыть";
+}
+
+/* Назначение: Позиционирует выпадающий блок фильтра справа, задает ему адаптивную ширину и отступы. */
+.offers__filter {
+  max-width: clamp(191px, 10.631rem + 5.36vw, 273px);
+  margin-left: auto;
+  position: relative;
+  flex-direction: column;
+  user-select: none;
+}
+
+@media (width>768px) {
+  .offers__filter {
+    margin-bottom: 40px;
+  }
+}
+@media (width<=768px) {
+  .offers__filter {
+    margin-bottom: 30px;
+  }
+}
+
+/* Назначение: Оформляет внешне кнопку выпадающего списка фильтра, распределяя текст и стрелку по краям. */
+.offers__filter-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+  border: 1px solid #d10078;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+@media (width>768px) {
+  .offers__filter-button {
+    padding: 7px 25px 8px 25px;
+    font-size: 18px;
+  }
+}
+@media (width<=768px) {
+  .offers__filter-button {
+    padding: 7px 15.5px 8px 15.5px;
+    font-size: 10px;
+  }
+}
+
+/* Назначение: Задает правый отступ для стрелки фильтра. */
+@media (width>768px) {
+  .filter__down-arrow {
+    margin-right: 25px;
+  }
+}
+
+@media (width<=768px) {
+  .filter__down-arrow {
+    margin-right: 15.5px;
+  }
+}
+
+/* Назначение: Отвечает за размер текста кнопки фильтра и смену его цвета при открытии списка. */
+.offers__filter-text {
+  transition: color var(--transition-time) ease;
+  font-size: clamp(12px, 0.5rem + 0.52vw, 18px);
+}
+
+@media (width<=768px) {
+  .offers__filter-text {
+    font-size: 12px;
+  }
+}
+
+.offers__filter_open .offers__filter-text {
+  color: var(--button-cover);
+}
+
+/* Назначение: Задает размеры и плавную анимацию вращения для иконки стрелки. */
+.offers__filter-arrow {
+  width: 10px;
+  height: 17px;
+  transition: transform 0.3s ease;
+}
+
+/* Стили выпадающего меню фильтра */
+
+/* Назначение: Стилизует выпадающий блок списка фильтра и активирует его показ вместе с переворотом стрелки при наличии класса открытия (_open). */
+.offers__filter-list {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  padding: 0;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.offers__filter_open .offers__filter-list {
+  display: block;
+}
+
+.offers__filter_open .offers__filter-arrow {
+  transform: rotate(180deg);
+}
+
+/* Элемент: пункт списка */
+/* Назначение: Оформляет отдельные пункты выпадающего меню сортировки с разделителями и эффектом наведения. */
+.offers__filter-option {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 25px 8px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  color: #333;
+}
+
+.offers__filter-option:last-child {
+  border-bottom: none;
+}
+
+.offers__filter-option:hover {
+  background-color: #f9f9f9;
+}
+
+/* Элемент: галочка */
+/* Назначение: Управляет отображением галочки выбора у активного элемента списка. */
+.offers__filter-check {
+  display: none;
+  color: #d10078;
+  font-weight: bold;
+}
+
+/* Модификатор пункта: выбранный элемент */
+.offers__filter-option--selected {
+  font-weight: 500;
+}
+
+.offers__filter-option--selected .offers__filter-check {
+  display: inline;
+}
+
+/** карточки */
+
+/* Назначение: Задает внешний нижний отступ для основного блока с карточками товаров. */
+.offers__main {
+  margin-bottom: 130px;
+}
+
+@media (width<=1200px) {
+  .offers__main {
+    margin-bottom: 90px;
+  }
+}
+
+@media (width<=992px) {
+  .offers__main {
+    margin-bottom: 40px;
+  }
+}
+
+/* Назначение: Превращает список карточек во флекс-контейнер с переносом элементов и отступами. */
+.offers__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: var(--background-grey);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (width<=768px) {
+  .offers__list {
+    gap: 10px;
+  }
+}
+
+/* Назначение: Вычисляет адаптивную ширину карточки товара (3 в ряд на десктопе, 2 в ряд на смартфонах). */
+.offers__list-item {
+  width: calc((100% - 40px) / 3);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-light);
+}
+
+@media (width<=768px) {
+  .offers__list-item {
+    width: calc((100% - 20px) / 3);
+  }
+}
+
+@media (width<=540px) {
+  .offers__list-item {
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+/* Назначение: Обеспечивает адаптивность изображений товаров в карточках. */
+.offers__image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (width<=1400px) {
+  .offers__image {
+    margin-bottom: 20px;
+  }
+}
+
+/* Назначение: Оформляет контентную часть карточки, растягивая её на всю высоту и скрывая элементы за скругленными углами. */
+.offers__info {
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* указывает флекс-элементу занять всё доступное свободное пространство внутри флекс-контейнера по главной оси */
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/* Назначение: Задает адаптивные отступы и размеры шрифта для текста описания товара. */
+.offers__text {
+  font-weight: 300;
+  font-size: clamp(10px, 0.413rem + 0.91vw, 24px);
+  margin-inline: clamp(10px, 0.17rem + 1.94vw, 40px);
+  padding-top: clamp(12px, 0.325rem + 1.81vw, 40px);
+  flex-grow: 1;
+}
+
+@media (width<=992px) {
+  .offers__text {
+    font-size: 12px;
+  }
+}
+@media (width<=768px) {
+  .offers__text {
+    font-size: 10px;
+  }
+}
+
+/* Назначение: Выстраивает блок цен и скидок внутри карточки с помощью двухколоночной сетки (Grid).[cite: 3] */
+.offers__booking {
+  margin-inline: clamp(10px, 0.17rem + 1.94vw, 40px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  row-gap: 7px;
+}
+
+@media (width<=992px) {
+  .offers__booking {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    row-gap: 3px;
+  }
+}
+
+/* Назначение: Позиционирует индикатор наличия товара в левом верхнем углу сетки цен.[cite: 3] */
+.discount__in-stock {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: clamp(10px, 0.504rem + 0.52vw, 18px);
+  color: var(--available-color);
+  white-space: nowrap;
+  min-width: 0; /* Предотвращаем переполнение флекс-контейнера */
+  place-self: center start;
+}
+
+/* Назначение: Рисует зеленую точку статуса наличия перед текстом. */
+.discount__in-stock::before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: var(--available-color);
+  margin-right: clamp(12px, 0.417rem + 0.69vw, 20px);
+}
+
+@media (width<=992px) {
+  .discount__in-stock::before {
+    width: 10px;
+    height: 10px;
+    margin-right: 6px;
+  }
+}
+@media (width<=768px) {
+  .discount__in-stock::before {
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+  }
+}
+
+/* Назначение: Оформляет плашку размера скидки в процентах в правом верхнем углу сетки цен.[cite: 3] */
+.discount__discount-amount {
+  background-color: var(--button-cover);
+  display: inline-flex;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: clamp(0.938rem, 0.801rem + 0.58vw, 1.5rem);
+  padding-block: 4px;
+  padding-inline: clamp(10.5px, 0.383rem + 1.17vw, 28.5px);
+  max-width: clamp(56px, 2.635rem + 3.69vw, 113px);
+  flex-shrink: 0;
+  border-radius: 5px;
+}
+
+@media (width<=992px) {
+  .discount__discount-amount {
+    padding-inline: clamp(5px, 0.11rem + 0.83vw, 10px);
+    font-size: clamp(10px, 0.382rem + 1vw, 16px);
+  }
+}
+
+/* Назначение: Стилизует старую зачеркнутую цену в правом нижнем углу сетки цен.[cite: 3] */
+.offers__previous-price {
+  font-family: var(--second-family);
+  font-weight: 900;
+  font-size: clamp(12px, 0.568rem + 0.78vw, 24px);
+  text-decoration: line-through;
+  white-space: nowrap;
+  color: #ababab;
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end; /* Прижимаем вправо под скидку */
+  align-self: center;
+}
+
+@media (width<=992px) {
+  .offers__previous-price {
+    font-size: 12px;
+  }
+}
+
+/* Назначение: Оформляет актуальную цену товара в левом нижнем углу сетки цен.[cite: 3] */
+.offers__last-price {
+  /* display: inline-block; */
+  font-size: clamp(17px, 0.683rem + 1.62vw, 42px);
+  white-space: nowrap;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+@media (width<=992px) {
+  .offers__last-price {
+    font-size: 20px;
+  }
+}
+@media (width<=768px) {
+  .offers__last-price {
+    font-size: 16px;
+  }
+}
+
+/* Назначение: Объединяет счетчик и кнопку покупки в единую строку одинаковой высоты. */
+.offers__add-to-card {
+  display: flex;
+  align-items: stretch; /* Одинаковая высота кнопок */
+  width: 100%;
+  height: clamp(32px, 1.49rem + 2.09vw, 64px);
+}
+
+/* Назначение: Стилизует блок выбора количества товара (скрывается на мобильных устройствах). */
+.offers__product-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, -0.02rem + 2.61vw, 50px);
+  border: 1px solid #111;
+  border-radius: 3px;
+  width: 50%;
+}
+
+@media (width<=768px) {
+  .offers__product-count {
+    display: none;
+  }
+}
+
+/* Назначение: Стилизует кнопки увеличения/уменьшения количества товара с интерактивными эффектами. */
+.count__btn {
+  width: auto;
+  height: auto;
+  background: transparent;
+
+  /* Идеальное центрирование символов + и - */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px; /* Размер значков */
+  line-height: 1;
+  font-family: inherit;
+  color: #111;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.count__btn:hover {
+  opacity: 0.6;
+}
+
+.count__btn:active {
+  transform: scale(0.95);
+}
+
+/* Кнопка "В корзину" */
+/* Назначение: Оформляет основную кнопку добавления товара в корзину. */
+.offers__card-filling {
+  flex: 1 1 50%;
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #111;
+  border-radius: 0 3px 3px 0; /* Скругление только справа */
+  font-size: clamp(12px, 0.568rem + 0.78vw, 24px);
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+@media (width<=992px) {
+  .offers__card-filling {
+    font-size: 14px;
+  }
+}
+
+.offers__card-filling:hover {
+  background-color: #333;
+}
+
+/* Назначение: Задает параметры текста для итогового отображения количества. */
+.offers__total-count {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: clamp(14px, 0.71rem + 0.65vw, 24px);
+  color: #111;
+}
+
+/* ==========================================================================
+   5. ПОДВАЛ СЕКЦИИ (ПАГИНАЦИЯ)
+   ========================================================================== */
+
+/* Назначение: Выравнивает подвал секции с пагинацией по левому краю. */
+.offers__footer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Назначение: Ограничивает размеры блока навигации по страницам и центрирует его содержимое по вертикали. */
+.offers__select-page {
+  max-width: 245px;
+  max-height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+/* Назначение: Задает адаптивные размеры и отступы для кнопок переключения страниц пагинации. */
+.select-page__previous-page,
+.select-page__next-page {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-page__previous-page {
+  width: 64px;
+  height: 64px;
+}
+
+.select-page__next-page {
+  margin-right: 30px;
+  margin-left: 20px;
+  width: 64px;
+  height: 64px;
+}
+
+@media (width<=992px) {
+  .select-page__previous-page,
+  .select-page__next-page {
+    width: 48px;
+    height: 48px;
+  }
+}
+@media (width<=768px) {
+  .select-page__previous-page,
+  .select-page__next-page {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (width<=768px) {
+  .select-page__next-page {
+    margin-right: 15px;
+    margin-left: 10px;
+  }
+}
+
+/* Назначение: Регулирует размер шрифта номера текущей страницы с учетом мобильных устройств. */
+.select-page__page-number {
+  display: inline-block;
+  font-size: 24px;
+}
+
+@media (width<=768px) {
+  .select-page__page-number {
+    font-size: 16px;
+  }
+}
