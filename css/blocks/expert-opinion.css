@@ -5,6 +5,16 @@
   background-repeat: no-repeat;
 }
 
+@media (width > 1920px) {
+  .expert {
+    /* Жестко задаем размер картинки на ультрашироких экранах, чтобы она не росла дальше */
+    background-size: 700px;
+
+    /* Привязываем центр отсчета к середине блока (50%) и сдвигаем на фиксированное число пикселей вправо от центра */
+    background-position: calc(50% + 450px) bottom;
+  }
+}
+
 @media (width>1420px) and (width<=1920px) {
   .expert {
     background-size: auto clamp(600px, 20.673rem + 19.23vw, 700px);
@@ -86,7 +96,7 @@
 }
 @media (width<=540px) {
   .expert__text {
-        font-size: 11px;
+    font-size: 11px;
   }
 }
 
@@ -94,14 +104,3 @@
   padding-bottom: 0;
 }
 
-/* .expert__text-small {
-  display: none;
-  box-sizing: content-box;
-  font-family: var(--font-family);
-  background-color: var(--background-grey);
-  font-size: 14px;
-  line-height: 140%;
-  padding-block: 70px;
-  text-align: justify;
-  hyphens: auto;
-} */
