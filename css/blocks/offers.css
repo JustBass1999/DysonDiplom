@@ -259,7 +259,7 @@ display: block — при наступлении этого условия (че
   border: 1px solid #e5e5e5;
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  z-index: 1;
 }
 
 .offers__filter_open .offers__filter-list {
@@ -280,6 +280,17 @@ display: block — при наступлении этого условия (че
   border-bottom: 1px solid #f0f0f0;
   cursor: pointer;
   color: #333;
+}
+
+@media (width>768px) {
+  .offers__filter-option {
+    font-size: clamp(12px, 0.5rem + 0.52vw, 18px);
+  }
+}
+@media (width<=768px) {
+  .offers__filter-option {
+    font-size: 10px;
+  }
 }
 
 .offers__filter-option:last-child {

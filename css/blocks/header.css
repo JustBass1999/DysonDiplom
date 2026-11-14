@@ -176,7 +176,40 @@
   stroke: #fff;
   transition: stroke var(--transition-time);
   display: flex;
+  align-items: end;
+}
+
+.header__orders-button::after {
+  content: var(--count, "0");
+  background-color: #fff;
+  border-radius: 50px;
+  display: none;
+  justify-content: center;
   align-items: center;
+  font-size: 14px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  width: 25px;
+  height: 25px;
+}
+
+.header__orders-button.active::after {
+  display: inline-flex;
+}
+
+@media (width<=768px) {
+  .header__orders-button::after {
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+  }
+}
+@media (width<=768px) {
+  .header__orders-button::after {
+    font-size: 9px;
+    width: 13px;
+    height: 13px;
+  }
 }
 
 .header__orders-icon {
