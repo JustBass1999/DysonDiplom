@@ -29,6 +29,10 @@ h1 {
   font-family: var(--second-family);
 }
 
+.is-hidden {
+  display: none !important;
+}
+
 .main__title {
   font-family: var(--second-family);
   font-size: clamp(20px, 0.9rem + 1.44vw, 42px);
@@ -147,15 +151,26 @@ h1 {
 }
 
 .show-more__big-button {
-  font-size: 24px;
+  font-size: clamp(12px, 0.559rem + 0.78vw, 24px);
   border: 1px solid #111;
   border-radius: 3px;
   padding: 15.5px 39px 15.5px 49px;
-  width: 311px;
-  height: 64px;
+  width: clamp(196px, 7.458rem + 9.98vw, 311px);
+  height: clamp(40px, 1.804rem + 1.83vw, 64px);
   font-weight: 400;
   background: none;
   transition: background-color var(--transition-time);
+}
+
+@media (width<=1600px) {
+  .show-more__big-button {
+    padding: 13px 30px 13px 45px;
+  }
+}
+@media (width<=1400px) {
+  .show-more__big-button {
+    padding: 12px 25px 12px 35px;
+  }
 }
 
 @media (any-hover: hover) {

@@ -8,6 +8,8 @@
     <script defer src="./js/offers__filter.js"></script>
     <script defer src="./js/burger.menu.js"></script>
     <script defer src="./js/reviews.js"></script>
+    <!-- Подключение fsLightbox -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.js"></script>
     <title>Document</title>
   </head>
 
@@ -680,11 +682,26 @@
 
                 <div class="review-card__gallery">
                   <div class="review-card__photos">
-                    <img class="review-card__photo" src="./content/review.png" alt="Фото отзыва" />
-                    <img class="review-card__photo" src="./content/review.png" alt="Фото отзыва" />
-                    <img class="review-card__photo" src="./content/review.png" alt="Фото отзыва" />
+                    <a href="./content/review-1-BIG.jpeg" data-fslightbox="review-1"
+                      ><img
+                        class="review-card__photo"
+                        src="./content/review-1.png"
+                        alt="Фото отзыва"
+                    /></a>
+                    <a href="./content/review-2-BIG.jpeg" data-fslightbox="review-1"
+                      ><img
+                        class="review-card__photo"
+                        src="./content/review-2.webp"
+                        alt="Фото отзыва"
+                    /></a>
+                    <a href="./content/review-1-BIG.jpeg" data-fslightbox="review-1"
+                      ><img
+                        class="review-card__photo"
+                        src="./content/review-1.png"
+                        alt="Фото отзыва"
+                    /></a>
                   </div>
-                  <button class="review-card__more-photos" type="button">Смотреть все фото</button>
+                  <a class="review-card__more-photos" type="button">Смотреть все фото</a>
                 </div>
               </div>
             </article>
@@ -723,11 +740,11 @@
                 <span class="review-card__name">Виктор</span>
                 <div class="review-card__stars stars" aria-label="Оценка 5 из 5">
                   <!-- Иконки звезд -->
-                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <a href=""><img class="review-card__star" src="./icons/Star.svg" alt="" /></a>
+                  <a href=""><img class="review-card__star" src="./icons/Star.svg" alt="" /></a>
+                  <a href=""><img class="review-card__star" src="./icons/Star.svg" alt="" /></a>
+                  <a href=""><img class="review-card__star" src="./icons/Star.svg" alt="" /></a>
+                  <a href=""><img class="review-card__star" src="./icons/Star.svg" alt="" /></a>
                 </div>
               </div>
               <!-- Правая колонка: Основной контент -->
@@ -741,9 +758,14 @@
                 </p>
                 <div class="review-card__gallery">
                   <div class="review-card__photos">
-                    <img class="review-card__photo" src="./content/review.png" alt="Фото отзыва" />
+                    <a href="./content/review-2-BIG.jpeg" data-fslightbox="review-3"
+                      ><img
+                        class="review-card__photo"
+                        src="./content/review-2.webp"
+                        alt="Фото отзыва"
+                    /></a>
                   </div>
-                  <button class="review-card__more-photos" type="button">Смотреть все фото</button>
+                  <a class="review-card__more-photos" type="button">Смотреть все фото</a>
                 </div>
               </div>
             </article>
@@ -752,80 +774,100 @@
           <div class="reviews__footer">
             <button class="reviews__more-button show-more__big-button" type="button">
               <span>Показать еще</span>
-              <img src="icons/show-more-arrow.svg" alt="">
+              <img class="reviews__more-arrow" src="icons/show-more-arrow.svg" alt="" />
             </button>
           </div>
         </div>
       </section>
 
-      <section class="faq-section">
-        <div class="faq-container container">
-          <h3 class="faq-title main__title">FAQ — Часто задаваемые вопросы</h3>
+      <section class="faq">
+        <div class="faq__container container">
+          <h3 class="faq__title main__title">FAQ — Часто задаваемые вопросы</h3>
 
-          <div class="faq-list">
-            <details class="faq-item">
-              <summary class="faq-question">
-                <span>Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span>
-                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+          <div class="faq__list">
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span class="faq__question-text"
+                  >Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span
+                >
+                <img class="faq__icon" src="./icons/cross.svg" alt="" aria-hidden="true" />
               </summary>
-              <div class="faq-answer">
-                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              <div class="faq__answer">
+                <p class="faq__answer-text">
+                  Здесь располагается подробный ответ на данный вопрос...
+                </p>
               </div>
             </details>
 
-            <details class="faq-item">
-              <summary class="faq-question">
-                <span
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span class="faq__question-text"
                   >В рукоятку встроен датчик температуры, благодаря которому она не поднимается выше
                   100 градусов?</span
                 >
-                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+                <img class="faq__icon" src="./icons/cross.svg" alt="" aria-hidden="true" />
               </summary>
-              <div class="faq-answer">
-                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              <div class="faq__answer">
+                <p class="faq__answer-text">
+                  Здесь располагается подробный ответ на данный вопрос...
+                </p>
               </div>
             </details>
 
-            <details class="faq-item">
-              <summary class="faq-question">
-                <span>Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span>
-                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span class="faq__question-text"
+                  >Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span
+                >
+                <img class="faq__icon" src="./icons/cross.svg" alt="" aria-hidden="true" />
               </summary>
-              <div class="faq-answer">
-                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              <div class="faq__answer">
+                <p class="faq__answer-text">
+                  Здесь располагается подробный ответ на данный вопрос...
+                </p>
               </div>
             </details>
 
-            <details class="faq-item">
-              <summary class="faq-question">
-                <span>Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span>
-                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span class="faq__question-text"
+                  >Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span
+                >
+                <img class="faq__icon" src="./icons/cross.svg" alt="" aria-hidden="true" />
               </summary>
-              <div class="faq-answer">
-                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              <div class="faq__answer">
+                <p class="faq__answer-text">
+                  Здесь располагается подробный ответ на данный вопрос...
+                </p>
               </div>
             </details>
 
-            <details class="faq-item">
-              <summary class="faq-question">
-                <span
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span class="faq__question-text"
                   >В рукоятку встроен датчик температуры, благодаря которому она не поднимается выше
                   100 градусов?</span
                 >
-                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+                <img class="faq__icon" src="./icons/cross.svg" alt="" aria-hidden="true" />
               </summary>
-              <div class="faq-answer">
-                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              <div class="faq__answer">
+                <p class="faq__answer-text">
+                  Здесь располагается подробный ответ на данный вопрос...
+                </p>
               </div>
             </details>
 
-            <details class="faq-item">
-              <summary class="faq-question">
-                <span>Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span>
-                <img class="faq-icon" src="./icons/cross.svg" alt="Иконка вопроса" />
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span class="faq__question-text"
+                  >Главное отличие фена Dyson в быстром и безопасном высушивании волос?</span
+                >
+                <img class="faq__icon" src="./icons/cross.svg" alt="" aria-hidden="true" />
               </summary>
-              <div class="faq-answer">
-                <p>Здесь располагается подробный ответ на данный вопрос...</p>
+              <div class="faq__answer">
+                <p class="faq__answer-text">
+                  Здесь располагается подробный ответ на данный вопрос...
+                </p>
               </div>
             </details>
           </div>
@@ -872,8 +914,7 @@
               <span>Показать еще</span>
             </a>
 
-              <img src="icons/shom-more-arrow.svg" alt="">
-
+            <img src="icons/shom-more-arrow.svg" alt="" />
           </div>
         </div>
       </section>

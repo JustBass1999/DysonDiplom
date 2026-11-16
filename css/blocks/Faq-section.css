@@ -1,40 +1,39 @@
-.faq-section {
+.faq {
   background-color: #f7f7f7;
-  padding: 0.1px;
+  display: flow-root;
   font-family: sans-serif;
   color: #1a1a1a;
 }
 
-.faq-title {
+.faq__title {
   margin-bottom: 59px;
   letter-spacing: -0.5px;
 }
 
 @media (width<=768px) {
-  .faq-title {
+  .faq__title {
     margin-bottom: 40px;
   }
 }
 
 @media (width<=390px) {
-  .faq-title {
+  .faq__title {
     margin-bottom: 30px;
   }
 }
 
-.faq-list {
+.faq__list {
   border-top: 1px solid #dcdcdc;
 }
 
-.faq-item {
-  border-bottom: 1px solid #dcdcdc;
-  transition: background-color 0.2s ease;
-  border-bottom: 1px solid #ababab;
+.faq__item {
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid #ababab;
+  transition: background-color 0.2s ease;
 }
 
-.faq-question {
+.faq__question {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,72 +41,88 @@
   font-size: 18px;
   font-weight: 400;
   cursor: pointer;
-  list-style: none; /* Убираем стандартный маркер списка для details */
+  list-style: none;
+}
+/* Убираем маркер для браузера Safari */
+.faq__question::-webkit-details-marker {
+  display: none;
 }
 
 @media (width<=1400px) {
-  .faq-question {
+  .faq__question {
     gap: 52px;
     padding: 18px 0;
   }
-  .faq-question span {
+  .faq__question span {
     font-size: 16px;
   }
-  .faq-question img {
+  .faq__question img {
     width: 29px;
     height: 30px;
   }
 }
 
 @media (width<=768px) {
-  .faq-question {
+  .faq__question {
     gap: 40px;
     padding: 18px 0;
   }
-  .faq-question span {
+  .faq__question span {
     font-size: 14px;
   }
-  .faq-question img {
+  .faq__question img {
     width: 25px;
     height: 25px;
   }
 }
 
 @media (width<=540px) {
-  .faq-question {
+  .faq__question {
     gap: 40px;
     padding: 18px 0;
   }
-  .faq-question span {
-    font-size: 12px;
+  .faq__question span {
+    font-size: 13px;
   }
-  .faq-question img {
+  .faq__question img {
     width: 20px;
     height: 20px;
   }
 }
 
-/* Убираем маркер для Safari */
-.faq-question::-webkit-details-marker {
-  display: none;
+.faq__icon {
+  transition: transform 0.3s ease;
 }
 
-/* Вертикальная палочка плюса */
-.faq-icon::after {
-  top: 0;
-  left: 9px;
-  width: 2px;
-  height: 20px;
-}
-
-/* Поворот в крестик при открытии */
-details[open] .faq-icon::after {
+details[open] .faq__icon {
   transform: rotate(90deg);
 }
 
-.faq-answer {
+.faq__answer {
   padding-bottom: 24px;
+}
+
+.faq__answer-text {
   color: #555;
   font-size: 16px;
   line-height: 1.5;
+  margin: 0;
+}
+
+@media (width<=1400px) {
+  .faq__answer-text {
+    font-size: 14px;
+  }
+}
+
+@media (width<=768px) {
+  .faq__answer-text {
+    font-size: 12px;
+  }
+}
+
+@media (width<=540px) {
+  .faq__answer-text {
+    font-size: 11px;
+  }
 }
