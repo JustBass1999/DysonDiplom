@@ -168,6 +168,7 @@
   }
 }
 
+/* 1. Делаем кнопку относительной, чтобы ::after знал, где позиционироваться */
 .header__orders-button {
   background: transparent;
   border: none;
@@ -183,18 +184,26 @@
   content: var(--count, "0");
   background-color: #fff;
   border-radius: 50px;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  font-family: var(--font-family);
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
   font-weight: 700;
-  width: 25px;
-  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Скрываем с помощью анимации/прозрачности */
+  opacity: 0;
+  transform: scale(0);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
+/* 3. Когда JS добавляет класс active — плавно и принудительно проявляем элемент */
 .header__orders-button.active::after {
-  display: inline-flex;
+  opacity: 1;
+  transform: scale(1);
 }
 
 @media (width<=768px) {
@@ -204,7 +213,7 @@
     height: 18px;
   }
 }
-@media (width<=768px) {
+@media (width<=540px) {
   .header__orders-button::after {
     font-size: 9px;
     width: 13px;

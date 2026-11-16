@@ -2,6 +2,12 @@ const filter = document.getElementById("sortSelect");
 const trigger = filter.querySelector(".offers__filter-button");
 const options = filter.querySelectorAll(".offers__filter-option");
 const selectedMenu = filter.querySelector(".offers__filter-text");
+const cart = document.querySelector(".header__orders-button");
+const items = document.querySelectorAll(".offers__list-item");
+const itemList = document.querySelector(".offers__list");
+const nextButton = document.querySelector(".select-page__next-page");
+const prevButton = document.querySelector(".select-page__previous-page");
+const pageNumber = document.querySelector(".select-page__page-number");
 
 //
 
@@ -38,10 +44,7 @@ document.addEventListener("click", (e) => {
 
 // Логика сортировки карточек как у табов через выпадающий список
 
-// СОРТИИРОВКА ДЕШЕВЫЕ/ДОРОГИЕ
-
-const items = document.querySelectorAll(".offers__list-item");
-const itemList = document.querySelector(".offers__list");
+// СОРТИРОВКА ДЕШЕВЫЕ/ДОРОГИЕ
 
 options.forEach((option) => {
   option.addEventListener("click", () => {
@@ -91,31 +94,71 @@ options.forEach((option) => {
   });
 });
 
-// Функционал изменения количества товара при нажатии кнопки + или -
+// Функционал изменения количества товара при нажатии кнопки + или - и добавления товаров в корзину
+
+let cartCount = 0;
 
 itemList.addEventListener("click", (event) => {
   if (event.target.classList.contains("count__btn--plus")) {
+    cart.classList.add("active");
     const counter = event.target.previousElementSibling;
     counter.textContent = Number(counter.textContent) + 1;
+    cartCount += 1;
+    cart.style.setProperty("--count", `"${cartCount}"`);
   } else if (event.target.classList.contains("count__btn--minus")) {
     const counter = event.target.nextElementSibling;
     if (counter.textContent > 0) {
       counter.textContent = Number(counter.textContent) - 1;
+      if (cartCount > 0) {
+        cartCount -= 1;
+        cart.style.setProperty("--count", `"${cartCount}"`);
+
+        if (cartCount === 0) {
+          cart.classList.remove("active");
+        }
+      }
     }
   }
 });
 
-// Функционал добавления товаров в корзину
+// Вспомогательная функция, чтобы не дублировать код изменения текста
+const updateAvailability = (selector, text) => {
+  itemList.querySelectorAll(selector).forEach((item) => {
+    item.textContent = text;
+  });
+};
 
-// Находим родительский блок и кнопку
-const cart = document.querySelector(".header__orders-button");
-const plusBtn = document.querySelector(".count__btn--plus");
+// Кнопка "Вперед"
 
-plusBtn.addEventListener("click", () => {
-  // 1. Получаем текущее значение переменной --count у элемента (или берем 1 по умолчанию)
-  const computedStyle = window.getComputedStyle(cart);
-  let currentVal = parseInt(computedStyle.getPropertyValue("--count")) || 0;
-  currentVal += 1;
-  cart.style.setProperty("--count", currentVal);
-  cart.classList.toggle("active")
+nextButton.addEventListener("click", () => {
+  if (itemList.classList.contains("offers__list-first--page")) {
+    itemList.classList.replace("offers__list-first--page", "offers__list-second--page");
+    updateAvailability(
+      ".offers__list-item:nth-child(n + 4) .offers__availability",
+      "Нет в наличии",
+    );
+    pageNumber.textContent = "2 из 3";
+  } else if (itemList.classList.contains("offers__list-second--page")) {
+    itemList.classList.replace("offers__list-second--page", "offers__list-third--page");
+    updateAvailability(
+      ".offers__list-item:nth-child(-n + 3) .offers__availability",
+      "Нет в наличии",
+    );
+    pageNumber.textContent = "3 из 3";
+  }
+});
+
+// Кнопка "Назад"
+
+prevButton.addEventListener("click", () => {
+  if (itemList.classList.contains("offers__list-third--page")) {
+    itemList.classList.replace("offers__list-third--page", "offers__list-second--page");
+
+    updateAvailability(".offers__list-item:nth-child(-n + 3) .offers__availability", "В наличии");
+    pageNumber.textContent = "2 из 3";
+  } else if (itemList.classList.contains("offers__list-second--page")) {
+    itemList.classList.replace("offers__list-second--page", "offers__list-first--page");
+    updateAvailability(".offers__list-item:nth-child(n + 4) .offers__availability", "В наличии");
+    pageNumber.textContent = "1 из 3";
+  }
 });

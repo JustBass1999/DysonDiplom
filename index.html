@@ -7,6 +7,7 @@
     <link rel="preload" as="image" href="../../images/main-banner.png" />
     <script defer src="./js/offers__filter.js"></script>
     <script defer src="./js/burger.menu.js"></script>
+    <script defer src="./js/reviews.js"></script>
     <title>Document</title>
   </head>
 
@@ -387,7 +388,7 @@
           </div>
 
           <div class="offers__main">
-            <ul class="offers__list">
+            <ul class="offers__list offers__list-first--page">
               <li class="offers__list-item" data-id="1" data-rating="4.5">
                 <article class="offers__info">
                   <div class="offers__image">
@@ -397,7 +398,7 @@
                     Фен Dyson Supersonic HD07 синий медный с 5 насадками в чехле и расческами
                   </h3>
                   <div class="offers__booking">
-                    <span class="discount__in-stock">В наличии</span>
+                    <span class="offers__availability">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
                     <span class="offers__last-price" data-price="59990">59 990Р</span>
                     <span class="offers__previous-price" data-price="69990">69 990 Р</span>
@@ -411,7 +412,7 @@
                       >
                         −
                       </button>
-                      <div class="offers__total-count">1</div>
+                      <div class="offers__total-count">0</div>
                       <button
                         class="count__btn count__btn--plus"
                         type="button"
@@ -432,7 +433,7 @@
                   </div>
                   <h3 class="offers__text">Фен Dyson Supersonic HD07 с 5 насадками и подставкой</h3>
                   <div class="offers__booking">
-                    <span class="discount__in-stock">В наличии</span>
+                    <span class="offers__availability">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
                     <span class="offers__last-price" data-price="47990">47 990Р</span>
                     <span class="offers__previous-price" data-price="51990">51 990 Р</span>
@@ -446,7 +447,7 @@
                       >
                         −
                       </button>
-                      <div class="offers__total-count">1</div>
+                      <div class="offers__total-count">0</div>
                       <button
                         class="count__btn count__btn--plus"
                         type="button"
@@ -471,7 +472,7 @@
                     Фен Dyson Supersonic 4 насадки HD03 с чехлом для хранения цвет сирень
                   </h3>
                   <div class="offers__booking">
-                    <span class="discount__in-stock">В наличии</span>
+                    <span class="offers__availability">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
                     <span class="offers__last-price" data-price="46990">46 990Р</span>
                     <span class="offers__previous-price" data-price="51990">51 990 Р</span>
@@ -485,7 +486,7 @@
                       >
                         −
                       </button>
-                      <div class="offers__total-count">1</div>
+                      <div class="offers__total-count">0</div>
                       <button
                         class="count__btn count__btn--plus"
                         type="button"
@@ -507,7 +508,7 @@
                     Фен Dyson Supersonic HD07 синий медный с 5 насадками в чехле и расческами
                   </h3>
                   <div class="offers__booking">
-                    <span class="discount__in-stock">В наличии</span>
+                    <span class="offers__availability">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
                     <span class="offers__last-price" data-price="59990">59 990Р</span>
                     <span class="offers__previous-price" data-price="69990">69 990 Р</span>
@@ -521,7 +522,7 @@
                       >
                         −
                       </button>
-                      <div class="offers__total-count">1</div>
+                      <div class="offers__total-count">0</div>
                       <button
                         class="count__btn count__btn--plus"
                         type="button"
@@ -541,7 +542,7 @@
                   </div>
                   <h3 class="offers__text">Фен Dyson Supersonic HD07 с 5 насадками и подставкой</h3>
                   <div class="offers__booking">
-                    <span class="discount__in-stock">В наличии</span>
+                    <span class="offers__availability">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
                     <span class="offers__last-price" data-price="47990">47 990Р</span>
                     <span class="offers__previous-price" data-price="51990">51 990 Р</span>
@@ -555,7 +556,7 @@
                       >
                         −
                       </button>
-                      <div class="offers__total-count">1</div>
+                      <div class="offers__total-count">0</div>
                       <button
                         class="count__btn count__btn--plus"
                         type="button"
@@ -580,7 +581,7 @@
                     Фен Dyson Supersonic 4 насадки HD03 с чехлом для хранения цвет сирень
                   </h3>
                   <div class="offers__booking">
-                    <span class="discount__in-stock">В наличии</span>
+                    <span class="offers__availability">В наличии</span>
                     <span class="discount__discount-amount">-15%</span>
                     <span class="offers__last-price" data-price="46990">46 990Р</span>
                     <span class="offers__previous-price" data-price="51990">51 990 Р</span>
@@ -594,7 +595,7 @@
                       >
                         −
                       </button>
-                      <div class="offers__total-count">1</div>
+                      <div class="offers__total-count">0</div>
                       <button
                         class="count__btn count__btn--plus"
                         type="button"
@@ -630,115 +631,129 @@
       <section class="reviews">
         <div class="reviews__container container">
           <div class="reviews__header">
-            <div class="reviews__main-title main__title">
-              <div class="reviews__count main__title">Отзывы <span>151</span></div>
-            </div>
-            <div class="reviews__leave-reviews">
-              <div class="reviews__rate-it">
-                <div class="rate-it__stars-count">5 <span>/ 5</span></div>
-                <div class="stars leave-reviews__stars">
-                  <img class="stars__star-image" src="./icons/Star.svg" alt="" />
-                  <img class="stars__star-image" src="./icons/Star.svg" alt="" />
-                  <img class="stars__star-image" src="./icons/Star.svg" alt="" />
-                  <img class="stars__star-image" src="./icons/Star.svg" alt="" />
-                  <img class="stars__star-image" src="./icons/Star.svg" alt="" />
+            <div class="reviews__top-row">
+              <h2 class="reviews__title main__title">
+                Отзывы <span class="reviews__total-count">151</span>
+              </h2>
+
+              <div class="reviews__rating-overview rating-overview">
+                <div class="rating-overview__score">5 <span>/ 5</span></div>
+                <div class="rating-overview__stars stars">
+                  <img class="stars__item" src="./icons/Star.svg" alt="" />
+                  <img class="stars__item" src="./icons/Star.svg" alt="" />
+                  <img class="stars__item" src="./icons/Star.svg" alt="" />
+                  <img class="stars__item" src="./icons/Star.svg" alt="" />
+                  <img class="stars__item" src="./icons/Star.svg" alt="" />
                 </div>
               </div>
-              <button class="reviews__add-review">Написать отзыв</button>
             </div>
+
+            <button class="reviews__add-review">Написать отзыв</button>
           </div>
 
-          <article class="review-card">
-            <!-- Левая колонка: Автор и рейтинг -->
-            <div class="review-card__author">
-              <span class="review-card__name">Ольга</span>
-              <div class="review-card__stars stars" aria-label="Оценка 5 из 5">
-                <!-- Иконки звезд -->
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-              </div>
-            </div>
-            <!-- Правая колонка: Основной контент -->
-            <div class="review-card__body">
-              <h3 class="review-card__title">Это лучший фен!</h3>
-              <time class="review-card__date" datetime="2022-05-21">21/05/2022</time>
-              <p class="review-card__text">
-                Пользуюсь около месяца, хочу поделиться впечатлениями. Во-первых, фен очень легкий,
-                удобно лежит в руке, не скользит. Кнопка включения и выключения расположена удобно,
-                а не где-то сбоку. Мощность у фена хорошая, волосы сушит быстро
-              </p>
-              <div class="review-card__gallery">
-                <div class="review-card__photos">
-                  <img src="./content/review.png" alt="Фото отзыва" />
-                  <img src="./content/review.png" alt="Фото отзыва" />
-                  <img src="./content/review.png" alt="Фото отзыва" />
+          <div class="reviews__list">
+            <article class="review-card">
+              <!-- Левая колонка: Автор и рейтинг -->
+              <div class="review-card__author">
+                <span class="review-card__name">Ольга</span>
+                <div class="review-card__stars stars" aria-label="Оценка 5 из 5">
+                  <!-- Иконки звезд -->
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
                 </div>
-                <button class="review-card__more-photos" type="button">Смотреть все фото</button>
               </div>
-            </div>
-          </article>
-
-          <article class="review-card">
-            <!-- Левая колонка: Автор и рейтинг -->
-            <div class="review-card__author">
-              <span class="review-card__name">Татьяна</span>
-              <div class="review-card__stars stars" aria-label="Оценка 5 из 5">
-                <!-- Иконки звезд -->
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-              </div>
-            </div>
-            <!-- Правая колонка: Основной контент -->
-            <div class="review-card__body">
-              <h3 class="review-card__title">Отличный фен</h3>
-              <time class="review-card__date" datetime="2022-05-21">21/05/2022</time>
-              <p class="review-card__text">
-                Фен очень понравился. Качественный, стильный: свою цену полностью оправдывает!
-              </p>
-              <div class="review-card__gallery">
-                <!-- <div class="review-card__photos"></div> -->
-              </div>
-            </div>
-          </article>
-
-          <article class="review-card">
-            <!-- Левая колонка: Автор и рейтинг -->
-            <div class="review-card__author">
-              <span class="review-card__name">Виктор</span>
-              <div class="review-card__stars stars" aria-label="Оценка 5 из 5">
-                <!-- Иконки звезд -->
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-                <img class="review-card__star" src="./icons/Star.svg" alt="" />
-              </div>
-            </div>
-            <!-- Правая колонка: Основной контент -->
-            <div class="review-card__body">
-              <h3 class="review-card__title">Быстро пришел</h3>
-              <time class="review-card__date" datetime="2022-05-21">21/05/2022</time>
-              <p class="review-card__text">
-                Фен очень понравился. Качественный, стильный: свою цену полностью оправдывает!
-              </p>
-              <div class="review-card__gallery">
-                <div class="review-card__photos">
-                  <img src="./content/review.png" alt="Фото отзыва" />
+              <!-- Правая колонка: Основной контент -->
+              <div class="review-card__content">
+                <div class="review-card__header-info">
+                  <h3 class="review-card__title">Это лучший фен!</h3>
+                  <time class="review-card__date" datetime="2022-05-21">21/05/2022</time>
                 </div>
-                <button class="review-card__more-photos" type="button">Смотреть все фото</button>
+                <p class="review-card__text">
+                  Пользуюсь около месяца, хочу поделиться впечатлениями. Во-первых, фен очень
+                  легкий, удобно лежит в руке, не скользит. Кнопка включения и выключения
+                  расположена удобно, а не где-то сбоку. Мощность у фена хорошая, волосы сушит
+                  быстро
+                </p>
+
+                <div class="review-card__gallery">
+                  <div class="review-card__photos">
+                    <img class="review-card__photo" src="./content/review.png" alt="Фото отзыва" />
+                    <img class="review-card__photo" src="./content/review.png" alt="Фото отзыва" />
+                    <img class="review-card__photo" src="./content/review.png" alt="Фото отзыва" />
+                  </div>
+                  <button class="review-card__more-photos" type="button">Смотреть все фото</button>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+
+            <!-- Отзыв 2: Без фото -->
+            <article class="review-card">
+              <div class="review-card__author">
+                <span class="review-card__name">Татьяна</span>
+                <div class="review-card__stars stars" aria-label="Оценка 5 из 5">
+                  <!-- Иконки звезд -->
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                </div>
+              </div>
+              <!-- Правая колонка: Основной контент -->
+              <div class="review-card__content">
+                <div class="review-card__header-info">
+                  <h3 class="review-card__title">Отличный фен</h3>
+                  <time class="review-card__date" datetime="2022-05-21">21/05/2022</time>
+                </div>
+                <p class="review-card__text">
+                  Фен очень понравился. Качественный, стильный: свою цену полностью оправдывает!
+                </p>
+                <div class="review-card__gallery">
+                  <!-- <div class="review-card__photos"></div> -->
+                </div>
+              </div>
+            </article>
+
+            <article class="review-card">
+              <!-- Левая колонка: Автор и рейтинг -->
+              <div class="review-card__author">
+                <span class="review-card__name">Виктор</span>
+                <div class="review-card__stars stars" aria-label="Оценка 5 из 5">
+                  <!-- Иконки звезд -->
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                  <img class="review-card__star" src="./icons/Star.svg" alt="" />
+                </div>
+              </div>
+              <!-- Правая колонка: Основной контент -->
+              <div class="review-card__content">
+                <div class="review-card__header-info">
+                  <h3 class="review-card__title">Быстро пришел</h3>
+                  <time class="review-card__date" datetime="2022-05-21">21/05/2022</time>
+                </div>
+                <p class="review-card__text">
+                  Фен очень понравился. Качественный, стильный: свою цену полностью оправдывает!
+                </p>
+                <div class="review-card__gallery">
+                  <div class="review-card__photos">
+                    <img class="review-card__photo" src="./content/review.png" alt="Фото отзыва" />
+                  </div>
+                  <button class="review-card__more-photos" type="button">Смотреть все фото</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
           <div class="reviews__footer">
-            <a class="show-more__main-button" href="#">
+            <button class="reviews__more-button show-more__big-button" type="button">
               <span>Показать еще</span>
-            </a>
+              <img src="icons/show-more-arrow.svg" alt="">
+            </button>
           </div>
         </div>
       </section>
@@ -853,9 +868,12 @@
             </article>
           </div>
           <div class="news__footer">
-            <a class="show-more__main-button" href="#">
+            <a class="show-more__button" href="#">
               <span>Показать еще</span>
             </a>
+
+              <img src="icons/shom-more-arrow.svg" alt="">
+
           </div>
         </div>
       </section>

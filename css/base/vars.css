@@ -28,6 +28,7 @@
   --secondary-color: #c9c69b;
   --disable-color: #5d5d56;
   --available-color: #68ae5c;
+  --disable-color: #dc5b5b;
 
-  --transition-time: 0.5s;
+  --transition-time: 0.2s;
 }

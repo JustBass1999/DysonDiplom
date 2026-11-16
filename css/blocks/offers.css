@@ -335,7 +335,9 @@ display: block — при наступлении этого условия (че
   }
 }
 
-.offers__list {
+.offers__list.offers__list-first--page,
+.offers__list.offers__list-second--page,
+.offers__list.offers__list-third--page {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -347,7 +349,7 @@ display: block — при наступлении этого условия (че
 }
 
 @media (width<=768px) {
-  .offers__list {
+  .offers__list.offers__list-first--page {
     gap: 10px;
   }
 }
@@ -429,7 +431,7 @@ display: block — при наступлении этого условия (че
   }
 }
 
-.discount__in-stock {
+.offers__availability {
   grid-column: 1;
   grid-row: 1;
   font-size: clamp(10px, 0.504rem + 0.52vw, 18px);
@@ -439,7 +441,7 @@ display: block — при наступлении этого условия (че
   place-self: center start;
 }
 
-.discount__in-stock::before {
+.offers__availability::before {
   content: "";
   display: inline-block;
   width: 13px;
@@ -450,18 +452,39 @@ display: block — при наступлении этого условия (че
 }
 
 @media (width<=992px) {
-  .discount__in-stock::before {
+  .offers__availability::before {
     width: 10px;
     height: 10px;
     margin-right: 6px;
   }
 }
 @media (width<=768px) {
-  .discount__in-stock::before {
+  .offers__availability::before {
     width: 8px;
     height: 8px;
     margin-right: 4px;
   }
+}
+
+.offers__list.offers__list-second--page .offers__list-item:nth-child(n + 4) .offers__availability {
+  color: var(--disable-color);
+}
+.offers__list.offers__list-second--page
+  .offers__list-item:nth-child(n + 4)
+  .offers__availability::before {
+  background-color: var(--disable-color);
+}
+.offers__list.offers__list-third--page .offers__list-item:nth-child(-n + 3) .offers__availability {
+  color: var(--disable-color);
+}
+.offers__list.offers__list-third--page
+  .offers__list-item:nth-child(-n + 3)
+  .offers__availability::before {
+  background-color: var(--disable-color);
+}
+
+.offers__list.offers__list-third--page .offers__list-item:nth-child(n + 4) {
+  display: none;
 }
 
 .discount__discount-amount {

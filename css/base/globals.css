@@ -7,7 +7,6 @@
 
 .page__body {
   min-width: 375px;
-
 }
 
 .body__lock {
@@ -144,6 +143,36 @@ h1 {
 @media (width<=768px) {
   .show-more__pink-button {
     font-size: 12px;
+  }
+}
+
+.show-more__big-button {
+  font-size: 24px;
+  border: 1px solid #111;
+  border-radius: 3px;
+  padding: 15.5px 39px 15.5px 49px;
+  width: 311px;
+  height: 64px;
+  font-weight: 400;
+  background: none;
+  transition: background-color var(--transition-time);
+}
+
+@media (any-hover: hover) {
+  .show-more__big-button:hover,
+  .reviews__add-review:hover {
+    background-color: var(--bg-grey);
+  }
+}
+
+@media (width<=768px) {
+  .show-more__big-button {
+    font-size: 16px;
+    border: 1px solid #111;
+    border-radius: 3px;
+    padding: 10px 16px 10px 20px;
+    width: 196px;
+    height: 36px;
   }
 }
 
