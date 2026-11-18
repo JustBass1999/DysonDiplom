@@ -8,6 +8,7 @@
     <script defer src="./js/offers__filter.js"></script>
     <script defer src="./js/burger.menu.js"></script>
     <script defer src="./js/reviews.js"></script>
+    <script defer src="./js/news.js"></script>
     <!-- Подключение fsLightbox -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.js"></script>
     <title>Document</title>
@@ -876,45 +877,68 @@
 
       <section class="news">
         <div class="news__container container">
-          <div class="news__title main__title">Новости</div>
-          <div class="news__content">
-            <article class="news__article">
-              <img class="news__image" src="./content/64.png" alt="Изображение продукции Dyson" />
-              <time class="news__date">21 декабря 2022</time>
-              <h3 class="news__article-title">Есть ли безопасные выпрямители для волос</h3>
-              <p class="news__article-text">
-                Добавьте объем и рельеф коротким волосам. Посмотрите, как создать мягкие, легкие
-                локоны и волны на коротких волосах и волосах средней длины.
-              </p>
-              <a class="news__article-button show-more__pink-button" href="#"> Читать далее </a>
-            </article>
-            <article class="news__article">
-              <img class="news__image" src="./content/64.png" alt="Изображение продукции Dyson" />
-              <time class="news__date">21 декабря 2022</time>
-              <h3 class="news__article-title">Есть ли безопасные выпрямители для волос</h3>
-              <p class="news__article-text">
-                Добавьте объем и рельеф коротким волосам. Посмотрите, как создать мягкие, легкие
-                локоны и волны на коротких волосах и волосах средней длины.
-              </p>
-              <a class="news__article-button show-more__pink-button" href="#"> Читать далее </a>
-            </article>
-            <article class="news__article">
-              <img class="news__image" src="./content/64.png" alt="Изображение продукции Dyson" />
-              <time class="news__date">21 декабря 2022</time>
-              <h3 class="news__article-title">Есть ли безопасные выпрямители для волос</h3>
-              <p class="news__article-text">
-                Добавьте объем и рельеф коротким волосам. Посмотрите, как создать мягкие, легкие
-                локоны и волны на коротких волосах и волосах средней длины.
-              </p>
-              <a class="news__article-button show-more__pink-button" href="#"> Читать далее </a>
-            </article>
-          </div>
+          <h2 class="news__title main__title">Новости</h2>
+          <ul class="news__list">
+            <li class="news__item">
+              <article class="news__article">
+                <img
+                  class="news__image"
+                  src="./content/64.png"
+                  width="440"
+                  height="294"
+                  alt="Изображение продукции Dyson"
+                />
+                <time class="news__date" datetime="2022-12-21">21 декабря 2022</time>
+                <h3 class="news__article-title">Есть ли безопасные выпрямители для волос</h3>
+                <p class="news__article-text">
+                  Добавьте объем и рельеф коротким волосам. Посмотрите, как создать мягкие, легкие
+                  локоны и волны на коротких волосах и волосах средней длины.
+                </p>
+                <a class="news__article-link show-more__pink-button" href="#"> Читать далее </a>
+              </article>
+            </li>
+            <li class="news__item">
+              <article class="news__article">
+                <img
+                  class="news__image"
+                  src="./content/64.png"
+                  width="440"
+                  height="294"
+                  alt="Изображение продукции Dyson"
+                />
+                <time class="news__date" datetime="2022-12-21">21 декабря 2022</time>
+                <h3 class="news__article-title">Есть ли безопасные выпрямители для волос</h3>
+                <p class="news__article-text">
+                  Добавьте объем и рельеф коротким волосам. Посмотрите, как создать мягкие, легкие
+                  локоны и волны на коротких волосах и волосах средней длины.
+                </p>
+                <a class="news__article-link show-more__pink-button" href="#"> Читать далее </a>
+              </article>
+            </li>
+            <li class="news__item">
+              <article class="news__article">
+                <img
+                  class="news__image"
+                  src="./content/64.png"
+                  width="440"
+                  height="294"
+                  alt="Изображение продукции Dyson"
+                />
+                <time class="news__date" datetime="2022-12-21">21 декабря 2022</time>
+                <h3 class="news__article-title">Есть ли безопасные выпрямители для волос</h3>
+                <p class="news__article-text">
+                  Добавьте объем и рельеф коротким волосам. Посмотрите, как создать мягкие, легкие
+                  локоны и волны на коротких волосах и волосах средней длины.
+                </p>
+                <a class="news__article-link show-more__pink-button" href="#"> Читать далее </a>
+              </article>
+            </li>
+          </ul>
           <div class="news__footer">
-            <a class="show-more__button" href="#">
+            <button class="news__more-btn show-more__big-button" type="button">
               <span>Показать еще</span>
-            </a>
-
-            <img src="icons/shom-more-arrow.svg" alt="" />
+              <img src="icons/shom-more-arrow.svg" alt="" aria-hidden="true" />
+            </button>
           </div>
         </div>
       </section>
