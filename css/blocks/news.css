@@ -111,7 +111,7 @@
 .news__more-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 25px;
   text-decoration: none;
   text-wrap: nowrap;
 }

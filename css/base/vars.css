@@ -2,6 +2,7 @@
   /* container */
   --container-width: 1360px;
   --container-padding: clamp(20px, -2.694rem + 16.83vw, 280px);
+  --container-padding-768px: 70px;
   --container-padding-540px: clamp(20px, -2rem + 13.33vw, 40px);
   --container-margin: clamp(46px, 1.218rem + 6.8vw, 150px);
 

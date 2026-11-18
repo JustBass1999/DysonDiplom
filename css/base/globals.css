@@ -18,6 +18,11 @@
   margin: var(--container-margin) auto;
 }
 
+@media (width<=768px) {
+  .container {
+    width: min(var(--container-width), 100% - var(--container-padding-768px) * 2);
+  }
+}
 @media (width<=540px) {
   .container {
     width: min(var(--container-width), 100% - var(--container-padding-540px) * 2);
@@ -41,7 +46,7 @@ h1 {
 }
 @media (width<=992px) {
   .main__title {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 @media (width<=540px) {
