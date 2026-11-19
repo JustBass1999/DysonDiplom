@@ -1,0 +1,24 @@
+.sort-filter__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+  border: 1px solid #d10078;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+@media (width>768px) {
+  .sort-filter__button {
+    padding: 7px 25px 8px 25px;
+    font-size: 18px;
+  }
+}
+@media (width<=768px) {
+  .sort-filter__button {
+    padding: 7px 15.5px 8px 15.5px;
+    font-size: 10px;
+  }
+}
